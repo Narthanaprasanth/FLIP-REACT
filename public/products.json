@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "name":"Fans & Geysers",
+        "price":"From ₹999",
+        "image":"https://rukminim2.flixcart.com/image/120/120/xif0q/water-geyser/m/9/7/-original-imahd77j8jh7hmge.jpeg?q=80"
+    },
+    {
+        "id":2,
+        "name":"Home Essentials",
+        "price":"Shop Now!",
+        "image":"https://rukminim2.flixcart.com/image/120/120/xif0q/water-purifier/a/u/x/-original-imahdt5pq9bzzstb.jpeg?q=80"
+    },
+    {
+        "id":3,
+        "name":"Projector",
+        "price":"From ₹6990",
+        "image":"https://rukminim2.flixcart.com/image/120/120/xif0q/projector/q/7/6/i9-pro-10-ei9027-led-projector-egate-original-imah5e3bggu5qcgp.jpeg?q=80"
+    },
+    {
+        "id":4,
+        "name":"Best Selling Mobile S...",
+        "price":"From ₹499*",
+        "image":"https://rukminim2.flixcart.com/image/120/120/kcf4lu80/speaker/mobile-tablet-speaker/h/u/f/srs-xb23-sony-original-imaftk66vjxp86h5.jpeg?q=80"
+    },
+    {
+        "id":5,
+        "name":"Monitors",
+        "price":"From ₹6599",
+        "image":"https://rukminim2.flixcart.com/image/120/120/xif0q/monitor/f/0/f/-original-imagwwcxv9cqds7d.jpeg?q=80"
+    },
+    {
+        "id":6,
+        "name":"Fastrack Smartwatch...",
+        "price":"From ₹1,399",
+        "image":"https://rukminim2.flixcart.com/image/120/120/xif0q/smartwatch/5/v/s/-original-imagxrhetgfuebnn.jpeg?q=80"
+    }  ,
+    {
+        "id":7,
+        "name":"Printers",
+        "price":"From ₹2,336",
+        "image":"https://rukminim2.flixcart.com/image/612/612/xif0q/printer/s/8/d/-original-imafkykednshkhx5.jpeg?q=70"
+    },
+    {
+        "id":8,
+        "name":"Monitors",
+        "price":"From ₹7,949",
+        "image":"https://rukminim2.flixcart.com/image/120/120/xif0q/monitor/c/3/u/-original-imah9hc6zk6wkjcz.jpeg?q=80"
+    }  
+]

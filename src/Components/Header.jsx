@@ -32,16 +32,16 @@ function Header(){
 
                         </div>
                    </div>
-                <div className="cart-container">
+                <div className="cart-container">   
                     <div className="cart">
                       <img style={{background:"white",marginRight:"8px"}} src={cart} alt="" />
-                       <span style={{background:"white"}}>Cart</span>
+                       <span style={{background:"white",fontFamily:"Regular"}}>Cart</span>
                     </div>
                 </div>
                  <div className="seller-container">
                     <div className="seller" >
                        <img style={{background:"white",marginRight:"8px"}} src={seller} alt="" /> 
-                       <span style={{background:"white"}}>Become a Seller</span>
+                       <span style={{background:"white",fontFamily:"Regular"}}>Become a Seller</span>
                     </div>           
                 </div>
                 <div className="dots"><img className="dots-img" src={dots} alt="" /></div>

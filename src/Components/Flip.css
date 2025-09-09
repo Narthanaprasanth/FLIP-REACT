@@ -17,9 +17,12 @@
 
 
 *{                                           
-  background-color: #f1f3f6;
   margin: 0px;
   padding:0px
+}
+body{
+  background-color: #f1f3f6;
+
 }
 .header-container {
  background-color: #ffffff;
@@ -93,24 +96,20 @@ border-radius: 7px;
 .seller{
   padding: 0px 20px;
     background-color: white;
-
 }
 .dots{
   padding: 0px 20px;
     background-color: white;
-
 }
 .dots-img{
   padding: 8px;
     background-color: white;
-
 }
 .head-mid{
   display: flex;
   flex-direction: row;
   align-items: center;
-    background-color: white;
-
+  background-color: white;
 }
 .Search-input ::placeholder{
   font-size: 18px;
@@ -396,27 +395,151 @@ padding-top: 16px;
   color: white;
   background-color: white;
 }
-
 .dot {
   width: 12px;
   height: 4px;
-    background-color: rgba(53, 52, 52, 0.13);
+  background-color: rgba(53, 52, 52, 0.13);
   border-radius: 50%;
-  transition: all 0.3s ease; /* smooth animation */
+  transition: all 0.3s ease; 
  position: relative;
  bottom: 5px;
 }
-
-/* Active one will expand */
 .dot.active {
-  width: 30px;         /* expanded width */
-  border-radius: 10px; /* makes it pill-shaped */
+  width: 30px;        
+  border-radius: 10px;
   background-color: rgb(46, 46, 46);
 }
-
-
-
-
-
-
+/* SALE */
+.sale{
+  position: relative;
+  margin-top: 120px;                
+  width: 100%;
+}
+.sale-img{
+display: block;
+ margin: auto;
+}
+.main-container{
+  display: flex;
+  flex-direction: row;
+ padding-top: 16px;
+ position: relative;
+ justify-content: center;
+}
+.electro-container{
+  width: 1330px;
+  height: 373px;
+  position: relative; 
+  background-color:white;
+}
+.flight-booking img{
+  width: 253px;
+  height: 389px;
+  margin-left: 15px;
+  margin-top: -9px;
   
+}
+.inner-electro{
+  display:flex;
+  position:absolute;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 12px;
+}
+.electro-container h2{
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: -0.02px;
+  font-family: "SemiBold";
+  font-weight: 100;
+  padding: 16px;
+}
+.labels h3{
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -.01px;
+  font-family: "Regular";
+  font-weight: 100;
+    margin: auto;
+  display: flex;
+  justify-content: center;
+  color: #1f1f1f;
+
+}              
+.labels p{
+   font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -.01px;
+  font-family: "SemiBold";
+    margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.labels{
+  padding-top: 12px;
+}
+.cover{
+  padding: 12px 24px;
+  margin: 8px;
+}
+.cover img{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.prod{
+  width: 152px !important;
+  height: 152px !important;
+}
+.prod img{
+  height: 152px;
+}
+
+.btn-left2{
+
+  position:absolute;
+  width: 40px;
+  height: 88px;
+  border: none;                
+  left: 0px;
+  top: 30%;
+  border-radius: 4px 0px 0px 4px;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,.12);
+
+}
+.btn-right2{
+  position:absolute;
+  width: 40px;
+  height: 88px;
+  border: none;                
+  right: 0px;
+  top: 30%;
+  border-radius: 4px 0px 0px 4px;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,.12);
+}
+.btn-left2 svg{
+  position: relative;
+  height: 6px;
+  width: 6px;      
+  top: 5px;                             
+  border-color:rgb(135, 135, 135);
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  transform: scale(1) translateY(-70%) rotate(135deg);
+  transform-origin: 40% 50%;
+  transition: transform .3s;
+}
+.btn-right2 svg{
+  position: relative;
+  height: 6px;
+  width: 6px;   
+  top: 5px;
+  border-color:rgb(135, 135, 135);
+  border-style: solid;
+  border-width: 0px 2px 2px 0px;
+  transform: scale(1) translateY(-70%) rotate(-45deg);
+  transform-origin: 40% 50%;
+  transition: transform .3s;
+}
