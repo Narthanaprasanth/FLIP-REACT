@@ -9,31 +9,31 @@ const BannerCarousel = ()=>{
   const images=[
     {id:1,src:Banner,alt:"Banner1"},  
     {id:2,src:Banner2,alt:"Banner2"},
-    {id:3,src:Banner3,alt:"Banner3"},  
-    {id:4,src:Banner4,alt:"Banner4"},     
-  ]
-  const[Current,setCurrent]=useState(0) 
-  useEffect(()=>{     
+    {id:3,src:Banner3,alt:"Banner3"},   
+    {id:4,src:Banner4,alt:"Banner4"},           
+  ]                                         
+  const[Current,setCurrent]=useState(0)
+  useEffect(()=>{
     const interval=setInterval(()=>{
       setCurrent((prev)=>(prev+1)%images.length)
     },3000)                    
-    return()=>clearInterval(interval)
-  },[images.length])                                                                 
-
+    return()=>clearInterval(interval)                    
+  },[images.length])                                                                   
+  
     const handlePrev=()=>{
       setCurrent((prev)=>(prev-1+images.length)%images.length)
     }
     const handleNext=()=>{
       setCurrent((prev)=>(prev+1)%images.length)                         
     }
-  return( 
-    <div>
+  return(                          
+    <div className="main-banner">
     <div className="carousel-container">                        
-      <img                                              
-       src={images[Current].src} 
-       alt={images[Current].alt}       
+      <img            
+       src={images[Current].src}
+       alt={images[Current].alt}
        className="carousal-image"
-      />                                                 
+      />                         
       <button className="btn-left" onClick={handlePrev}> <svg></svg> </button> 
       <button className="btn-right" onClick={handleNext}><svg></svg> </button>
 
@@ -41,7 +41,7 @@ const BannerCarousel = ()=>{
   <div className="down">  
     {images.map((_, index)=>(
       <div
-        key={index}
+        key={index}                
         className={`dot ${Current===index ? "active" : ""}`}
         
       ></div>
@@ -52,7 +52,6 @@ const BannerCarousel = ()=>{
 <div className="sale"></div>
 <img className="sale-img" src={sale} alt="" />
 </div>
-)
+)                            
 }
-
 export default BannerCarousel

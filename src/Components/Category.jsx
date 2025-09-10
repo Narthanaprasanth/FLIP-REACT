@@ -39,7 +39,16 @@ function Category(){
                     <span>Fashion</span>                                                                   
                     <svg ></svg>
                 </div>
-            </div>                                                          
+            </div>   
+               <div className="electronics">
+                <div className="electronics-img">
+                    <img src={electroincs} alt="" />
+                </div>
+                <div className="electronics-txt">
+                    <span>Electronics</span>
+                     <svg ></svg>
+                </div>
+            </div>                                                       
             <div className="home">
                 <div className="home-img">
                     <img src={home} alt=""/>                                                                                                                                                                                                                                            
@@ -58,22 +67,14 @@ function Category(){
                     <span>TVs & Appliances</span>
                 </div>
             </div>
-            <div className="electronics">
-                <div className="electronics-img">
-                    <img src={electroincs} alt="" />
-                </div>
-                <div className="electronics-txt">
-                    <span>Electronics</span>
-                     <svg ></svg>
-                </div>
-            </div>
+         
            
            <div className="flight">
             <div className="flight-img">
                 <img src={flight} alt="" />
             </div>
             <div className="flight-txt">
-                <span>FLight Bookings</span>
+                <span>Flight Bookings</span>
             </div>
            </div>
            <div className="beauty">                          
