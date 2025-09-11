@@ -67,8 +67,7 @@ function Category(){
                     <span>TVs & Appliances</span>
                 </div>
             </div>
-         
-           
+                                         
            <div className="flight">
             <div className="flight-img">
                 <img src={flight} alt="" />
@@ -79,7 +78,7 @@ function Category(){
            </div>
            <div className="beauty">                          
             <div className="beauty-img">
-                <img src={beauty} alt="" />
+                <img src={beauty} alt=""/>
             </div>
             <div className="beauty-txt">
                 <span>Beauty,Food..</span>
@@ -94,13 +93,11 @@ function Category(){
                 <span>Grocery</span>
             </div>
            </div>
-
             </div>
-
         </div>
-       </div>       
+       </div>  
     )
-}        
+}
 export default Category
 
 

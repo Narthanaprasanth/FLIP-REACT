@@ -10,16 +10,15 @@ function App(){
     <div>
       <Header/>
       <Category/>
-     <BannerCarousel/>
+      <BannerCarousel/> 
      <ProductList/>
      <VioletDeals dataSource={"/Violet.json"}/>
-     <Trends/>
-     <VioletDeals dataSource={"/Violet2.json"}/>
+     {/* <Trends/>
+     <VioletDeals dataSource={"/Violet2.json"}/>  */}
     </div>              
   )                            
 }
 export default App
-
 
 
 
