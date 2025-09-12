@@ -15,16 +15,16 @@ const ProductList = () => {
       .catch((error) => console.error("Error Fetching Data:", error));
   }, []);
 
-  // Track screen resize
+  // Track screen resize      
 useEffect(() => {                                                   
   const handleResize = () => {                                                
     setIsMobile(window.innerWidth <= 1024 && window.innerWidth > 426);
     if(window.innerWidth<=426){
       setSliceCount(8)
     }else{
-      setSliceCount(6)
+      setSliceCount(6)                               
     }
-  };
+  };                                  
   handleResize(); // Initial run
   window.addEventListener("resize", handleResize);
   return () => window.removeEventListener("resize", handleResize);

@@ -8,7 +8,7 @@ import dots from "./image/dots.png"
 import menu from "./image/menu.png"
 import expl from "./image/expl.png"
 import "./Flip.css"
-function Header(){
+function Header(){ 
     return(                
         <div className="header-container">
             <div className="inside">           
@@ -51,7 +51,7 @@ function Header(){
             </div>                       
           </div>
         </div>
-        </div>
+        </div>    
     )
 }
 export default Header

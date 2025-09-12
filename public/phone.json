@@ -1,0 +1,59 @@
+[
+
+   {
+         "id":1,
+        "fulltext":"Samgung Galaxy S25 5G",
+        "shorttext":"Samgung Gala...",
+        "price":"Just ₹68,999*",
+        "image":"https://rukminim2.flixcart.com/image/110/110/xif0q/mobile/g/e/o/-original-imahf42u4vuy5czh.jpeg?q=80"
+    },
+    {
+        "id":2,
+        "fulltext":"Galaxy Pixel 9",
+        "shorttext":"Galaxy Pixel 9",
+        "price":"Just ₹62,999*",
+        "image":"https://rukminim2.flixcart.com/image/110/110/xif0q/mobile/b/p/t/-original-imahegqhrtpsz7sd.jpeg?q=80"
+    },
+    {
+        "id":3,
+        "fulltext":"Nothing Phone (3a)",
+        "shorttext":"Nothing Phon...",
+        "price":"Just ₹22,999*",
+        "image":"https://rukminim2.flixcart.com/image/110/110/xif0q/mobile/e/l/m/-original-imahcfcfhxrf5hzg.jpeg?q=80"
+    },
+    {
+        "id":4,
+        "fulltext":"Vivo T4 Lite 5G",
+        "shorttext":"Vivo T4 Lite 5G",
+        "price":"From ₹4,999",
+        "image":"https://rukminim2.flixcart.com/image/110/110/xif0q/mobile/6/9/t/-original-imahfkvfhpfaftmb.jpeg?q=80"
+    },
+    {
+        "id":5,
+        "fulltext":"Oppo K13x 5G",
+        "shorttext":"Oppo K13x 5G",
+        "price":"Just ₹10,749*",
+        "image":"https://rukminim2.flixcart.com/image/110/110/xif0q/mobile/d/o/q/-original-imahdde7qcfymps9.jpeg?q=80"
+    },
+    {
+        "id":6,
+        "fulltext":"Realme P3x 5G",
+        "shorttext":"Realme P3x 5G",
+        "price":"Just ₹12,499*",
+        "image":"https://rukminim2.flixcart.com/image/170/170/xif0q/mobile/j/n/1/-original-imah9gtmya9qhqse.jpeg?q=80"
+    },
+    {
+        "id":7,
+        "fulltext":"Coffie Pwdwe",
+        "shorttext":"Upto 80% Off",
+        "price":"Upto 80% Off",
+        "image":"https://rukminim2.flixcart.com/image/170/170/kzzw5u80/coffee/s/b/x/-original-imagbwf3wvhzfh5z.jpeg?q=80"
+    },
+    {
+        "id":8,
+        "fulltext":"Dry Fruits",
+        "shorttext":"Dry Fruits",
+        "price":"Upto 75% Off",
+        "image":"https://rukminim2.flixcart.com/image/120/120/k6fd47k0/nut-dry-fruit/p/z/7/200-100-natural-california-pouch-happilo-original-imafzvw2tcazeur6.jpeg?q=80"
+    }
+]
