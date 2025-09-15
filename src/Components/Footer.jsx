@@ -80,18 +80,25 @@ function Footer(){
                     <div className="deep">
                         <div className="deepimg">
                             <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/sell-image-9de8ef.svg" alt="Become a Seller" width="13" height="12"></img>
+                            <span>Become a Seller</span>
                         </div>
                         <div className="deepimg">
                             <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/advertise-image-866c0b.svg" alt="Advertise" width="14" height="14"></img>
+                            <span>Advertise</span>
                         </div>
                         <div className="deepimg">
                             <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/gift-cards-image-d7ff24.svg" alt="Gift Cards" width="13" height="13"></img>
+                            <span>Gift Cards</span>
                         </div>
                         <div className="deepimg">
                             <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/help-centre-image-c4ace8.svg" alt="Help Center" width="13" height="13"></img>
+                            <span> Help Center</span>
                         </div>
                         <div className="deepimg">
                             <span>© 2007-2025 Flipkart.com</span>
+                        </div>
+                        <div className="deepimg">
+                            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg" alt="Payment methods"></img>
                         </div>
                     </div>
                 </div>
@@ -102,6 +109,7 @@ function Footer(){
 export default Footer
 
 
+ 
 
   
 
@@ -122,9 +130,7 @@ export default Footer
 
 
     
-
-
-
+                                                                                        
                
  
  
