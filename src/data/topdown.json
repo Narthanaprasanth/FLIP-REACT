@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "name":"Fashion",
+        "sub":["mens Top Wear","Mens bottom wear","Women Ethnic","Mens Footwear","Watches & Accessories","Women Western","Bag suitcases & Luggages","Kids","Essentials","Winter"],
+        "sub2":["More in Men's Top Wear","All","Men's T-Shirt","Men's Casual Shirt","Men's Formal Shirt","Men's Kurta","Mens Ethnic Shirts","Men's blazers","Men's Raincoat","Men's Windcheaters","Men's Suits","Men's Fabrics"]
+    },
+        {
+        "id":2,
+        "name":"electronics",
+        "sub":["Audio","Electronics GST Store","Cameras & accessories","Computer peripherals","Gaming","Health & Personal Care","laptop Accessories","Laptop and Desktop","Mobile Accessory","Powerbank","Smart"],
+        "sub2":["More in Audio","All","Bluetooth Headphones","Wired Headphones","True Wireless Earbuds","Bluetoooth Speakers","Soundbars","Home Theatres","TV Streaming Device","Remote Control","DTH Set top box","Headphones pouch & Case Covers"]
+    },
+     {
+        "id":3,
+        "name":"Home",
+        "sub":["Home Furnishings","Furniture","Living Room Furniture","Kitchen & Dining","Bedroom furniture","Space Saving Furniture","Home Decor","Tools & Utility","Work Space Furniture","Kids Furniture","Lightings & Electricals"],
+        "sub2":["More in Home Furnishings","All","Bed Linens","BedSheets","Blankets","Curtains & Accessories","Bath linen","Floor coverings","Covers & Protectore","Cushions & Pillows","Kitchen Linen Sets","Table Linen Sets"]
+    }
+]
+
+ 

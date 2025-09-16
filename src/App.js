@@ -24,6 +24,8 @@ function App(){
       <Category/>
       <BannerCarousel/> 
      <ProductList/>
+            <VioletDeals dataSource={"/Violet.json"}/>
+
      <Trends dataSource="./Trends.json" title="Tyoohar Trends"/>
     <div className="discount-main">
      <Discounts dataSource="/Discount.json" title="Discounts for you" />
@@ -37,7 +39,6 @@ function App(){
       </div>
            <Trends dataSource="./phone.json" title="Mobiles"/>
 
-       <VioletDeals dataSource={"/Violet.json"}/>
      <VioletDeals dataSource={"/Violet2.json"}/> 
      {!isFullScreen &&(
       <>

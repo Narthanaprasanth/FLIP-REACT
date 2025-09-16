@@ -8,7 +8,7 @@ const Discounts=({dataSource,title})=>{
         .catch((err)=>console.error("error fetching product:",err))
     },[dataSource])
     return(
-        <div className="shop-container">
+        <div className="shop-container">                                                  
             <div className="disc-head">
                 <h2>{title}</h2>
             </div>
@@ -32,5 +32,21 @@ const Discounts=({dataSource,title})=>{
 }
 export default Discounts
 
+  
+ 
+ 
 
 
+                         
+
+
+   
+
+
+
+
+
+
+ 
+
+                

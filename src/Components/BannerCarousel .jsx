@@ -28,12 +28,14 @@ const BannerCarousel = ()=>{
     }
   return(                          
     <div className="main-banner">
-    <div className="carousel-container">                        
+    <div className="carousel-container">  
+      <div className="carousel-track">                    
       <img            
        src={images[Current].src}
        alt={images[Current].alt}
        className="carousal-image"
-      />                         
+      />   
+      </div>                        
       <button className="btn-left" onClick={handlePrev}> <svg></svg> </button> 
       <button className="btn-right" onClick={handleNext}><svg></svg> </button>
 
@@ -55,3 +57,17 @@ const BannerCarousel = ()=>{
 )                            
 }
 export default BannerCarousel
+
+
+
+    
+
+
+
+
+
+
+
+
+
+           

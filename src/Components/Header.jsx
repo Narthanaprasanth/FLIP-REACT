@@ -8,7 +8,7 @@ import dots from "./image/dots.png"
 import menu from "./image/menu.png"
 import expl from "./image/expl.png"
 import "./Flip.css"
-function Header(){ 
+function Header(){
     return(                
         <div className="header-container">
             <div className="inside">           
@@ -34,12 +34,15 @@ function Header(){
                              <div className="login-txt"><span>Login</span></div>
                              <div className="log-img" style={{marginLeft:"8px"}}><img src={svg} alt="" /></div>
                         </div>
+
+                
+
                    </div>                          
                 <div className="cart-container">                                             
-                    <div className="cart"> 
+                    <div className="cart">                           
                       <img style={{background:"white"}} src={cart} alt=""/>
                        <span style={{background:"white",fontFamily:"Regular"}}>Cart</span>
-                    </div>
+                    </div>  
                 </div>
                  <div className="seller-container">
                     <div className="seller">

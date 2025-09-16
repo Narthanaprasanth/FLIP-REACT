@@ -26,7 +26,7 @@ function Footer(){
                     <a href="#">Cancellation & Returns</a>
                     <a href="#">FAQ</a>
                 </div>
-                 <div className="about">
+                 <div className="mail1" style={{"border":"none","padding":"0px"}}>
                     <span>CONSUMER POLICY</span>
                     <a href="#">Cancellation & Returns</a>
                     <a href="#">Terms Of Use</a>
@@ -73,7 +73,7 @@ function Footer(){
                     <a href="#">Bangaluru, 560103,</a>
                     <a href="#">Karnatak,India</a>
                     <a href="#">CIN : U51109KA2021PTC066107</a>
-                    <a href="#"><div className="combine">Telephone: <div className="blue">044-45614700</div> / <div className="blue">044-67415800</div> </div></a>
+                    <a href="#"><div className="combine">Telephone: <div className="blue">044-45614700 </div> / <div className="blue"> 044-67415800</div> </div></a>
                 </div>
                 </div>
                 <div className="footer-deep">
@@ -109,10 +109,8 @@ function Footer(){
 export default Footer
 
 
+                   
  
-
-  
-
 
 
                       
