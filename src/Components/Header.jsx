@@ -135,7 +135,7 @@ function Header() {
                                         <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/giftCard-bd87e1.svg" alt="Gift Cards" width="18" height="18"></img>
                                         <span>Gift Cards</span>
                                     </div>
-                                </div>
+                                </div>                              
                             </div>
                         </div>
                         <div className="cart-container">

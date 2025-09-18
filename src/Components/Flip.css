@@ -1229,9 +1229,6 @@ body {
 .whole {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* 2 columns */
-  grid-template-rows: repeat(2, auto);
-  /* 2 rows */
   padding-left: 12px;
   padding-right: 12px;
   padding-bottom: 4px;
@@ -1241,7 +1238,7 @@ body {
   background: white;
   border-radius: 16px;
   text-align: center;
-}           
+}            
 .shop-img img {
   width: 199px;
   height: 199px;
@@ -1249,18 +1246,16 @@ body {
   padding-right: 8px;
   padding-top: 8px;
   opacity: 1;
-  margin: auto;
+  margin: auto; 
   display: block;
   object-fit: contain;
   aspect-ratio: 1 / 1;
-    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out
-
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 .shop-img img:hover{
     transform: scale(1.1); 
-
 }
-.shop {
+.shop {                       
   display: flex;
   flex-direction: column;                  
   justify-content: center;

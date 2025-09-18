@@ -26,15 +26,19 @@ const Discounts = ({ dataSource, title }) => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div>                 
         </div>
     )
 }
 export default Discounts
-
+           
+                          
                   
 
+    
 
+         
+     
 
 
 

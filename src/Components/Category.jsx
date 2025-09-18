@@ -10,6 +10,7 @@ import beauty from "./image/beauty.png"
 import grocery from "./image/grocery.png"
 import topdown from "../data/topdown.json"
 import "./Flip.css"
+
 function Category() {
     const [hovered, setHovered] = useState(null);
     const [ActiveSubIndex, setActiveSubIndex] = useState(null)
@@ -24,7 +25,7 @@ function Category() {
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
-    return (
+    return (                                           
         <div className="category">
             <div className="category-inner">
                 <div className="inner">
@@ -51,7 +52,7 @@ function Category() {
                         style={{ position: "relative" }}
                     >
                         <div className="fashion-img">
-                            <img src={fashion} alt="" />
+                            <img src={fashion} alt="" />   
                         </div>
                         <div className="fashion-txt">
                             <span>Fashion</span>
@@ -68,7 +69,6 @@ function Category() {
                                     ))}
                                 </div>
                             )}
-
                             </div>
 
                             <div> {hovered === "fashion" && (
@@ -91,7 +91,6 @@ function Category() {
                                 </div>
                             )}
                             </div>
-
                             <div> {ActiveSubIndex === 1 && (
                                 <div className="topdown2">
                                     {topdown[0].sub3.map((item, i) => (
@@ -102,7 +101,6 @@ function Category() {
                                 </div>
                             )}
                             </div>
-
                             <div> {ActiveSubIndex === 2 && (
                                 <div className="topdown2">
                                     {topdown[0].sub2.map((item, i) => (
@@ -112,49 +110,43 @@ function Category() {
                                     ))}
                                 </div>
                             )}
-                            </div>
+                            </div>                                 
                         </div>
                     </div>
                     <div className={`electronics ${hovered === "electronics" ? "active" : ""}`}
                         onMouseEnter={() => setHovered("electronics")}
                         onMouseLeave={() => setHovered(null)}
                         onClick={() => isMobile && setHovered(hovered === "electronics" ? null : "electronics")}
-
-                        style={{ position: "relative" }}
-                    >
-
+                        style={{position: "relative" }}
+                    > 
                         <div className="electronics-img">
-                            <img src={electroincs} alt="" />
-                        </div>
+                            <img src={electroincs} alt=""/>
+                        </div>           
                         <div className="electronics-txt">
                             <span>Electronics</span>
                             <svg className={hovered === "electronics" ? "rotate-svg" : ""}></svg>
                         </div>
                         <div style={{ "display": "flex", "flexDirection": "row" }}
                         >
-                            <div>{hovered === "electronics" ? (
+                            <div>{hovered === "electronics"?(
                                 <div className="topdown3">
-                                    {topdown[1].sub.map((item, i) => (
+                                    {topdown[1].sub.map((item,i)=>(
                                         <div className={`top-each ${ActiveSubIndex2 === i ? "active" : ""}`} style={{ "display": "flex", "flexDirection": "row", "padding": "12px 16px" }} key={i} onMouseEnter={() => setActiveSubIndex2(i)} onMouseLeave={(null)}> <a href="#">{item}</a>
                                             <div className="topdown-svg"> <svg></svg> </div>
                                         </div>
-
                                     ))}
                                 </div>
-                            ) : ""}
-                            </div>
-                            <div>{hovered === "electronics" && (
+                            ) : ""}         
+                            </div>   
+                            <div>{hovered === "electronics"&&(
                                 <div className="topdown4">
-                                    {topdown[1].sub2.map((item, i) => (
-                                        <div className="top-each1" style={{ "display": "flex", "flexDirection": "row", "padding": "12px 16px" }} key={i}> <a href="#">{item}</a>
+                                    {topdown[1].sub2.map((item,i) =>(
+                                        <div className="top-each1"style={{ "display": "flex", "flexDirection": "row", "padding": "12px 16px" }} key={i}> <a href="#">{item}</a>
                                         </div>
-
                                     ))}
                                 </div>
                             )}
                             </div>
-
-
                             <div>{ActiveSubIndex2 === 0 && (
                                 <div className="topdown4">
                                     {topdown[1].sub2.map((item, i) => (
@@ -162,10 +154,9 @@ function Category() {
                                         </div>
 
                                     ))}
-                                </div>
-                            )}
+                                </div>  
+                            )}       
                             </div>
-
                             <div>{ActiveSubIndex2 === 2 && (
                                 <div className="topdown4">
                                     {topdown[1].sub3.map((item, i) => (
@@ -308,7 +299,13 @@ function Category() {
 }
 export default Category
 
-        
+
+    
+
+
+                 
+ 
+
 
   
 
@@ -318,7 +315,12 @@ export default Category
 
 
 
- 
+            
+
+
+
+
+                                  
 
 
 
@@ -327,6 +329,7 @@ export default Category
 
 
 
+  
 
 
 
@@ -334,7 +337,7 @@ export default Category
 
 
 
-
+                                                  
 
 
 
