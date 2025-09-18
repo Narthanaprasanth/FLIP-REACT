@@ -17,20 +17,19 @@ const Trends = ({ dataSource, title }) => {
         const handleResize = () => {
             setIsMobile(window.innerWidth >= 1024 && window.innerWidth > 426)
             if (window.innerWidth <= 426) {
-                setSliceCount(8)
+                setSliceCount(8)                  
             } else {
-                setSliceCount(6)
+                setSliceCount(6)                                   
             }
-        }
+        }                                                                      
         handleResize()
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize)
-    }, [])
-
+    }, [])                                                                                       
     const shownext = () => {
         if (startIndex + 7 < trends.length) {
             setstartindex((prev) => prev + 2)
-        }
+        }                              
     }
     const showprev = () => {
         if (startIndex > 0) {

@@ -15,7 +15,7 @@
             "Winter"
         ],
         "sub2": [
-            "More in Men's Top Wear",
+            "More in Men's Top Wear",      
             "All",
             "Men's T-Shirt",
             "Men's Casual Shirt",
@@ -27,14 +27,28 @@
             "Men's Windcheaters",
             "Men's Suits",
             "Men's Fabrics"
-        ]
-    },
-    {
+        ]  ,
+        "sub3":[
+            "More in Men's Bottom Wear",      
+            "All",
+            "Men's Jeans",
+            "Men's Trowsers",
+            "Men's Trackpants",
+            "Men's Shorts",
+            "Mens Cargos",
+            "Men's Threefourth",
+            "Men's Pyjamas",
+            "Men's Dhothi",
+            "Men's Ethinic pyjamas",
+            "Men's Fabrics"
+        ]                            
+    },                                                             
+    {                                           
         "id": 2,
         "name": "electronics",
         "sub": [
             "Audio",
-            "Electronics GST Store",
+            "Electronics GST Store",                    
             "Cameras & accessories",
             "Computer peripherals",
             "Gaming",
@@ -58,6 +72,20 @@
             "Remote Control",
             "DTH Set top box",
             "Headphones pouch & Case Covers"
+        ],
+        "sub3":[
+            "More in Cameras & Accessories",
+            "All",
+            "DSLR & niirrorless",
+            "Sprots & action",
+            "Point & Shoot",
+            "Instant Cameras",
+            "Camcorders",
+            "CameraTripods",
+            "Camera Lenses",
+            "Drones",
+            "Flashes",
+            "Gimbals"
         ]
     },
     {
@@ -89,6 +117,18 @@
             "Cushions & Pillows",
             "Kitchen Linen Sets",
             "Table Linen Sets"
+        ],
+        "sub3":[
+            "More in Living Room Furniture",
+            "Sofa Sets & Sectionals",
+            "TV Units",
+            "Dinning Sets",
+            "Sofa Beds",
+            "Recliners",
+            "Living Room Chairs",
+            "Cabinets & Drawers",
+            "Bookshelves",
+            "Shoe Racks"
         ]
     }
 ]

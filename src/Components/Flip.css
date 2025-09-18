@@ -30,6 +30,7 @@ body {
 
 }
 
+
 .header-container {
   background-color: #ffffff;
   width: 100%;
@@ -46,6 +47,9 @@ body {
   padding: 9.5px 28px;
   background-color: white;
   margin-left: 44px;
+}
+.Flip-explore{
+  cursor: pointer;
 }
 
 .Flip-explore img {
@@ -88,34 +92,42 @@ body {
   width: 24px;
   height: 24px;
 }
-.search-item{
+
+.search-item {
   cursor: pointer;
- 
+
 }
-.search-item:hover{
-    background-color: #f0f5ff;
+
+.search-item:hover {
+  background-color: #f0f5ff;
 }
+
 .Search-input {
   flex: 1;
   height: 100%;
 }
-.search{
+
+.search {
   display: flex;
   flex-direction: column;
 }
-.search-down{
-position: absolute;
-top: 53px;
-background-color: white;
-border-radius: 8px;
-}                  
-.search-down li{
-list-style: none;
-padding:10px 30px;
+
+.search-down {
+  position: absolute;
+  top: 53px;
+  background-color: white;
+  border-radius: 8px;
 }
-.search-dropdown{
-  width: 819px;  
+
+.search-down li {
+  list-style: none;
+  padding: 10px 30px;
 }
+
+.search-dropdown {
+  width: 819px;
+}
+
 .Search-input input {
   width: 100%;
   height: 100%;
@@ -344,6 +356,7 @@ padding:10px 30px;
 }
 
 /* ----------TOP-DOWN----------  */
+
 .topdown {
   flex-direction: column;
   box-shadow: 0px 8px 8px 1px rgb(0, 0, 0, .3);
@@ -393,10 +406,14 @@ padding:10px 30px;
 }
 
 .top-each:hover {
-  background-color: #f0f5ff;
+  font-weight: 600;
+  background: #f0f5ff;
+}
+  
+.top-each1:hover {
+  background-color: white;
   font-weight: 600;
 }
-
 .topdown-svg svg {
   margin-left: 8px;
   margin-top: 7px;
@@ -425,6 +442,8 @@ padding:10px 30px;
 
 .fashion-txt svg.rotate-svg {
   transform: rotate(-135deg);
+  border-color: rgb(72, 72, 238);
+  margin-top: 5px;
 }
 
 /* ----------------------------------------------- */
@@ -434,6 +453,7 @@ padding:10px 30px;
   padding-bottom: 16px;
   padding-right: 16px;
   padding-top: 16px;
+  cursor: pointer;
 }
 
 .minutes-img {
@@ -453,6 +473,7 @@ padding:10px 30px;
 
 .mobiles {
   padding: 16px;
+  cursor: pointer;
 }
 
 .mobiles-img {
@@ -482,6 +503,10 @@ padding:10px 30px;
   margin-bottom: 12px;
   margin-left: 13px;
   margin-right: 13px;
+}
+
+.fashion:hover .fashion-txt {
+  color: rgb(72, 72, 238);
 }
 
 .fashion-txt {
@@ -525,8 +550,13 @@ padding:10px 30px;
 
 .electronics-txt svg.rotate-svg {
   transform: rotate(-135deg);
+  border-color: rgb(72, 72, 238);
+  margin-top: 6px;
 }
 
+.electronics:hover .electronics-txt {
+  color: rgb(72, 72, 238);
+}
 
 .topdown3 {
   flex-direction: column;
@@ -600,6 +630,11 @@ padding:10px 30px;
   transition: transform .3s;
 }
 
+.home:hover .home-txt {
+  color: rgb(72, 72, 238);
+
+}
+
 .home-txt svg {
   margin-left: 8px;
   margin-top: 3px;
@@ -614,6 +649,8 @@ padding:10px 30px;
 
 .home-txt svg.rotate-svg {
   transform: rotate(-135deg);
+  border-color: rgb(72, 72, 238);
+
 }
 
 .topdown5 {
@@ -658,6 +695,7 @@ padding:10px 30px;
 
 .tv {
   padding: 16px;
+  cursor: pointer;
 }
 
 .tv-img {
@@ -674,6 +712,7 @@ padding:10px 30px;
 
 .flight {
   padding: 16px;
+  cursor: pointer;
 }
 
 .flight-img {
@@ -710,8 +749,13 @@ padding:10px 30px;
   transform: rotate(40deg);
 }
 
+.beauty:hover .beauty-txt {
+  color: rgb(72, 72, 238);
+}
+
 .beauty-txt svg.rotate-svg {
   transform: rotate(-135deg);
+  border-color: rgb(72, 72, 238);
 }
 
 .beauty-txt {
@@ -739,22 +783,20 @@ padding:10px 30px;
   top: 120px;
   left: 120px;
 }
-
 .topdown8 a {
   display: flex;
   width: 100%;
-  text-decoration: none;
+  text-decoration: none;   
   flex-wrap: nowrap;
   line-height: 20px;
   color: #333;
   font-size: 12px;
 }
-
 .topdown7 a {
   display: flex;
   width: 100%;
   text-decoration: none;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap;      
   line-height: 20px;
   color: #333;
   font-size: 12px;
@@ -762,6 +804,7 @@ padding:10px 30px;
 
 .grocery {
   padding: 16px;
+  cursor: pointer;
 }
 
 .grocery-img {
@@ -777,7 +820,9 @@ padding:10px 30px;
   font-family: "SemiBold";
   font-size: 14px;
 }
-
+.carousel-track{
+  cursor: pointer;
+}
 .carousel-container {
   position: relative;
   z-index: 0px;
@@ -877,6 +922,7 @@ padding:10px 30px;
 .sale-img {
   display: block;
   margin: auto;
+  cursor: pointer;
 }
 
 .main-container {
@@ -908,6 +954,7 @@ padding:10px 30px;
   padding-left: 4px;
   padding-right: 4px;
   padding-bottom: 12px;
+  cursor: pointer;
 }
 
 .electro-container h2 {
@@ -936,7 +983,6 @@ padding:10px 30px;
   width: 100%;
   max-width: 600px;
 }
-
 .labels p {
   font-size: 14px;
   line-height: 20px;
@@ -946,7 +992,7 @@ padding:10px 30px;
   display: flex;
   justify-content: center;
 }
-
+    
 .labels {
   padding-top: 12px;
 }
@@ -955,13 +1001,12 @@ padding:10px 30px;
   padding: 12px 24px;
   margin: 8px;
 }
-
+        
 .cover img {
   margin: auto;
   display: flex;
   justify-content: center;
 }
-
 .prod {
   width: 152px;
   height: 152px;
@@ -971,8 +1016,11 @@ padding:10px 30px;
   height: 152px;
   width: 153px;
   object-fit: contain;
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out
 }
-
+.prod img:hover{
+  transform: scale(1.1); 
+}
 .btn-left2 {
 
   position: absolute;
@@ -1024,7 +1072,9 @@ padding:10px 30px;
   transform-origin: 40% 50%;
   transition: transform .3s;
 }
-
+.flight-booking{
+  cursor: pointer;
+}
 
 /* VIOLET DEALS */
 
@@ -1042,6 +1092,7 @@ padding:10px 30px;
   height: 281px;
   margin-left: 4px;
   margin-right: 4px;
+  cursor: pointer;
 }
 
 .Trend-container {
@@ -1058,6 +1109,7 @@ padding:10px 30px;
   padding-left: 4px;
   padding-right: 4px;
   padding-bottom: 12px;
+  cursor: pointer;
 }
 
 .Trend-container h2 {
@@ -1118,8 +1170,13 @@ padding:10px 30px;
 
 .prod2 img {
   height: 152px;
+  width: 153px;
+  object-fit: contain;
+  transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out
 }
-
+.prod2 img:hover{
+  transform: scale(1.1); 
+}
 .main-container1 {
   display: flex;
   flex-direction: row;
@@ -1130,7 +1187,15 @@ padding:10px 30px;
 .menu {
   display: none;
 }
-
+.cart-container{
+  cursor: pointer;
+}
+.seller-container{
+  cursor: pointer;
+}
+.main-dot{
+  cursor: pointer;
+}
 .cart img {
   margin: 8px;
 }
@@ -1176,8 +1241,7 @@ padding:10px 30px;
   background: white;
   border-radius: 16px;
   text-align: center;
-}
-
+}           
 .shop-img img {
   width: 199px;
   height: 199px;
@@ -1189,19 +1253,22 @@ padding:10px 30px;
   display: block;
   object-fit: contain;
   aspect-ratio: 1 / 1;
-}
+    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out
 
+}
+.shop-img img:hover{
+    transform: scale(1.1); 
+
+}
 .shop {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;                  
   justify-content: center;
   align-items: center;
   margin-bottom: 8px;
   margin-left: 4px;
   margin-right: 4px;
-
-}
-
+}                        
 .shop-img {
   padding-left: 12px;
   padding-right: 12px;
@@ -1209,17 +1276,15 @@ padding:10px 30px;
   padding-bottom: 12px;
   border: 1px solid rgb(235, 235, 235);
   border-radius: 8px;
-
+  cursor: pointer;
 }
-
-.shop-details {
+.shop-details{
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   padding-top: 16px;
 }
-
 .shop-name {
   font-family: "Regular";
   font-size: 17px;
@@ -1243,6 +1308,7 @@ padding:10px 30px;
 
 .disc-img {
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .discount-main {
@@ -1272,6 +1338,7 @@ padding:10px 30px;
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
+cursor: pointer;
 }
 
 /* FOOTER */
@@ -1294,7 +1361,10 @@ padding:10px 30px;
   display: flex;
   flex-direction: column;
 }
-
+.about a:hover{
+  text-decoration: underline;
+  
+}
 .main-container {
   display: flex;
   flex-direction: row;
@@ -1324,7 +1394,18 @@ padding:10px 30px;
   text-decoration: none;
   line-height: 18px;
 }
-
+.underline {
+  display: flex;
+  flex-direction: column;
+}
+.underline a{
+  font-size: 12px;
+  font-family: "SemiBold";
+  line-height: 18px;
+}
+.underline a:hover{
+  text-decoration: underline;
+}
 .mail a {
   font-size: 12px;
   color: white;
@@ -1432,8 +1513,74 @@ padding:10px 30px;
   font-size: 18px;
 }
 
-
 @media screen and (max-width:1024px) {
+  .topdown {
+    position: fixed;
+    top: 200px;
+    left: 100px;
+  }
+
+  .topdown2 {
+    position: fixed;
+    top: 200px;
+    left: 300px;
+  }
+
+  .topdown3 {
+    position: fixed;
+    top: 200px;
+    left: 230px;
+  }
+
+  .topdown4 {
+    position: fixed;
+    top: 200px;
+    left: 450px;
+  }
+
+  .topdown5 {
+    position: fixed;
+    top: 200px;
+    left: 350px;
+  }
+
+  .topdown6 {
+    position: fixed;
+    top: 200px;
+    left: 550px;
+  }
+
+  .topdown7 {
+    position: fixed;
+    top: 200px;
+    right: 0px;
+  }
+
+  .topdown8 {
+    position: fixed;
+    top: 200px;
+    left: 550px;
+  }
+
+
+  .fashion.active .fashion-txt {
+    color: rgb(72, 72, 238);
+  }
+
+  .electronics.active .electronics-txt {
+    color: rgb(72, 72, 238);
+  }
+
+  .home.active .home-txt {
+    color: rgb(72, 72, 238);
+  }
+
+  .beauty.active .beauty-txt {
+    color: rgb(72, 72, 238);
+
+  }
+
+
   .cart img {
     margin: 8px;
   }
@@ -1546,6 +1693,7 @@ padding:10px 30px;
     margin-right: 13px;
   }
 
+
   .home-img {
     margin-bottom: 1px;
     margin-left: 13px;
@@ -1598,9 +1746,9 @@ padding:10px 30px;
     margin-bottom: 1px;
   }
 
-
   .main-banner {
     overflow: hidden;
+
   }
 
   .carousel-container {
@@ -1608,11 +1756,14 @@ padding:10px 30px;
     height: 188px;
     overflow-x: auto;
     white-space: nowrap;
-
+    position: relative;
+    z-index: 0;
+    overflow: visible;
   }
 
   .carousel-track {
     display: inline-flex;
+    position: relative;
   }
 
   .carousal-image {
@@ -1623,6 +1774,7 @@ padding:10px 30px;
     justify-content: center;
     margin: auto;
     flex-shrink: 0px;
+    position: relative;
   }
 
   .sale-img {

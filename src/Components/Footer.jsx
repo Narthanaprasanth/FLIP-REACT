@@ -28,6 +28,7 @@ function Footer() {
                 </div>
                 <div className="mail1" style={{ "border": "none", "padding": "0px" }}>
                     <span>CONSUMER POLICY</span>
+                    <div className="underline">
                     <a href="#">Cancellation & Returns</a>
                     <a href="#">Terms Of Use</a>
                     <a href="#">Security</a>
@@ -35,6 +36,7 @@ function Footer() {
                     <a href="#">Sitemap</a>
                     <a href="#">Grievance Redressal</a>
                     <a href="#">EPR Compliance</a>
+                </div>
                 </div>
 
                 <div className="mail1">

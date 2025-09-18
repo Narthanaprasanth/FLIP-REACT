@@ -32,7 +32,7 @@ const Discounts = ({ dataSource, title }) => {
 }
 export default Discounts
 
-
+                  
 
 
 
