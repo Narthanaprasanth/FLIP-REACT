@@ -48,12 +48,21 @@ function Product2() {
                                 <div className="product-main1">
 
                                     <div className="apple-item1">
-                                        <div className="apple-item2">
+                                        {item.seller && (<div className="best-seller">
+                                            {item.seller}
+                                        </div>
+                                        )}
+
+                                        <div className="apple-item2">                 
                                             <div className="apple-item3">
                                                 <div className="apple-item4">
                                                     <img src={item.image} alt="" />
                                                 </div>
                                             </div>
+                                            {item.unavailable && (<div className="unavailable">
+                                                <span>{item.unavailable}</span>
+                                            </div>)}
+                                            
                                         </div>
                                         <div className="compare2">
                                             <div className="compare3">
@@ -74,22 +83,57 @@ function Product2() {
 
                                         <div className="product-items2">
                                             <div className="product-title">{item.title}</div>
-                                            <div className="product-rating">
+                                            {item.green && (<div className="product-rating">
                                                 <span className="green-main"><div className="green-main2">{item.green}<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTYuNSA5LjQzOWwtMy42NzQgMi4yMy45NC00LjI2LTMuMjEtMi44ODMgNC4yNTQtLjQwNEw2LjUuMTEybDEuNjkgNC4wMSA0LjI1NC40MDQtMy4yMSAyLjg4Mi45NCA0LjI2eiIvPjwvc3ZnPg==" class="Rza2QY"></img></div></span>
                                                 <span className="green-rating"> {item.Ratings}</span>
-                                            </div>
+                                            </div>)}
+
 
                                             <div className="main-data">
                                                 <ul className="main-data1">
-                                                    <li className="rom">{item.ROM}</li>
+                                                    <li className="rom">{item.RAM} {item.ROM} {item.TB}</li>
                                                     <li className="rom">{item.Display}</li>
                                                     <li className="rom">{item.Frontcamera}</li>
+                                                    {item.battery && (<li className="rom">{item.battery}</li>)}
                                                     <li className="rom">{item.Processor}</li>
                                                     <li className="rom">{item.warrenty}</li>
 
                                                 </ul>
                                             </div>
 
+                                        </div>
+
+                                        <div className="price-container2">                                                     
+                                            <div className="price2">
+                                                <div className="price3">
+                                                    <div className="rate">
+                                                        {item.price}
+                                                    </div>
+                                                    {item.ratecut && (<div className="rate-cut">{item.ratecut}</div>)}
+
+                                                    {item.off && (<div className="offer2"><span>{item.off}</span> </div>)}
+
+                                                </div>
+                                            </div>
+
+                                            <div className="f-assured2">
+                                                <img src={item.fassure} alt="" />
+                                            </div>
+                                            {item.upto && (<div className="exchange-main2">
+                                                <div className="exchange-main3">
+                                                    <div className="upto2">Upto  </div>
+                                                    <div className="upto-rate">{item.upto}</div>
+                                                    <div className="off-on">Off on Exchange</div>
+                                                </div>
+                                            </div>)}
+
+                                            <div className="bank-offer2">
+                                                <div className="bank-offer3">
+                                                    <div className="bank-txt">
+                                                        {item.bankoffer}
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
