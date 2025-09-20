@@ -9,6 +9,7 @@ import flight from "./image/flight.png"
 import beauty from "./image/beauty.png"
 import grocery from "./image/grocery.png"
 import topdown from "../data/topdown.json"
+import {Link } from "react-router-dom"
 import "./Flip.css"
 
 function Category() {
@@ -37,14 +38,14 @@ function Category() {
                             <span>Minutes</span>
                         </div>
                     </div>
-                    <div className="mobiles">
+                    <Link to="/mobnext" className="mobiles">
                         <div className="mobiles-img">
                             <img src={mob} alt="" />
                         </div>
                         <div className="mobile-txt">
                             <span>Mobiles & Tablets</span>
                         </div>
-                    </div>
+                    </Link>
                     <div className={`fashion ${hovered === "fashion" ? "active" : ""}`}
                         onMouseEnter={() => setHovered("fashion")}
                         onMouseLeave={() => setHovered(null)}
@@ -70,7 +71,6 @@ function Category() {
                                 </div>
                             )}
                             </div>
-
                             <div> {hovered === "fashion" && (
                                 <div className="topdown2">
                                     {topdown[0].sub2.map((item, i) => (
