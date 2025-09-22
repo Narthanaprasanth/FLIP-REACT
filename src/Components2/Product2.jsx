@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-function Product2() {
-    const [products, setproducts] = useState([])
-    useEffect(() => {
-        fetch("/Apple.json")
-            .then((response) => response.json())
-            .then((data) => setproducts(data))
-            .catch((error) => console.error("error fetching product", error))
-    }, [])
+function Product2({products}) {
+   
+    if(products.length===0){
+        return <h3>No products found</h3>
+    }
     return (
         <div className="product-main">
             <div className="product-top">
@@ -37,7 +34,7 @@ function Product2() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>                     
 
             {/* -----------PRODUCT-LISTING------------- */}
             <div className="product-listing1">

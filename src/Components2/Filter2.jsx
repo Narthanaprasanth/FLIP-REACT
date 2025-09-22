@@ -1,6 +1,11 @@
 import React from "react";
 import "./Flip2.css"
-function Filter2({Ram}){
+function Filter2({Ram,setRamFilter,internal,setInternalFilter}){
+     const toggleSelection=(value,setFilter)=>{
+        setFilter((prev)=>
+        prev.includes(value) ? prev.filter((v)=>v!==value):[...prev,value]
+        )
+    }
     return(
         <div className="Filter-inner2">
             <div className="Filter-container3">
@@ -13,7 +18,7 @@ function Filter2({Ram}){
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>   
             <div className="Category2-container">
                 <div className="category2">
@@ -35,34 +40,65 @@ function Filter2({Ram}){
                 </div>
 
             </div>
+            {/* RAM */}
             <div className="ram-container2">
                 <div className="ram-container3">
                     <div className="ram-main">RAM</div>
                     <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                      </div>
+                     
                      <div className="options-main">
                         <div className="option-main2">
                             <div className="option-main3">
                                 <div className="option-main4">
-                                    {Ram.filter(c=>c && c.trim()!=="").map((c,i)=>(
-                                       <label key={i}> <input type="checkbox" />
+                                    {Ram.map((c,i)=>{ 
+                                        if(!c) return null;
+                                    return(
+                                    <label key={i}> <input type="checkbox" onChange={()=>toggleSelection(c,setRamFilter)} />
                                        <div className="each2">{c}</div>
                                       
-                                       </label>
-                                      ))}
+                                       </label>)
+                                        })}
                                 </div>
                             </div>
                         </div>
                      </div>
-            </div>
-        </div>                      
-    )
+                </div>
+                {/* INTERNAL STORAGE */}
+             <div className="ram-container2">
+                <div className="ram-container3">
+                    <div className="ram-main">INTERNAL STORAGE</div>
+                    <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                     </div>
+                     
+                     <div className="options-main">
+                        <div className="option-main2">
+                            <div className="option-main3">
+                                <div className="option-main4">
+                                    {internal.map((range,i)=>{ 
+                                        if(!range) return null;
+                                    return(
+                                    <label key={i}> <input type="checkbox"  onChange={()=>toggleSelection(range,setInternalFilter)} />
+                                       <div className="each2">{range.label}</div>
+                                      
+                                       </label>)
+                                        })}
+                                </div>
+                            </div>
+                        </div>                                    
+                     </div>
+              </div>
+        </div>                        
+    )                             
 }
 export default Filter2
+            
+                                   
+                 
 
-
-     
+                
     
+
 
 
 

@@ -2,7 +2,8 @@
     {
         "id":1,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70",
-        "title":"Apple iPhone 14 (Starlight, 123 GB)",
+        "title":"Apple iPhone 14 (Starlight, 128 GB)",
+        "Internalcheck":"128",
         "green":"4.6",
         "Ratings":"3,14,394 Ratings &  11,694 Reviews",
         "ROM":"128 GB ROM",
@@ -22,6 +23,7 @@
         "id":2,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
         "title":"Apple iPhone 14 (Blue, 128 GB)",
+        "Internalcheck":"128",
         "green":"4.6",
         "Ratings":"3,14,703 Ratings &  11,695 Reviews",
         "ROM":"128 GB ROM",
@@ -41,6 +43,7 @@
         "id":3,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/9/e/e/-original-imaghx9q5rvcdghy.jpeg?q=70",
         "title":"Apple iPhone 14 (Midnight, 128 GB)",
+        "Internalcheck":"128",
         "green":"4.6",
         "Ratings":"3,14,394 Ratings &  11,694 Reviews",
         "ROM":"128 GB ROM",
@@ -60,6 +63,7 @@
         "id":4,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/c/e/5/-original-imahft5g9uthykuh.jpeg?q=70",
         "title":"Apple iPhone 17 (White, 256 GB)",
+        "Internalcheck":"256",
         "ROM":"256 GB ROM",
         "Display":"16.0 cm (6.3 inch) Super Retina XDR Display",
         "Frontcamera":"48MP + 48MP | 18MP Front Camera",
@@ -76,6 +80,7 @@
         "id":5,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
         "title":"Apple iPhone 14 (Blue, 256 GB)",
+        "Internalcheck":"256",
         "green":"4.6",
         "Ratings":"3,14,703 Ratings &  11,696 Reviews",
         "ROM":"128 GB ROM",
@@ -94,6 +99,7 @@
         "id":6,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/e/x/e/-original-imah4jyw4fpqe7ru.jpeg?q=70",
         "title":"Apple iPhone 16 Pro (Black Titanium, 256 GB)",
+        "Internalcheck":"256",
         "green":"4.6",
         "Ratings":"3,008 Ratings &  145 Reviews",
         "ROM":"256 GB ROM",
@@ -113,6 +119,7 @@
         "id":8,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/a/o/v/-original-imagp27avqpgejaf.jpeg?q=70",
         "title":"Infinix Smart 7 HD (Green Apple, 64 GB)",
+        "Internalcheck":"64",
         "green":"4.2",
         "Ratings":"36,926 Ratings &  1,655 Reviews",
         "RAM":"2 GB RAM |",
@@ -135,6 +142,7 @@
         "id":9,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/6/9/t/-original-imahfkvfhpfaftmb.jpeg?q=70",
         "title":"vivo T4 Lite 5G Charger in the Box (Titanium Gold, 128 GB)",
+        "Internalcheck":"128",
         "green":"4.4",
         "Ratings":"16,034 Ratings &  515 Reviews",
         "RAM":"4 GB RAM |",
@@ -157,6 +165,7 @@
         "id":10,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/2/f/7/-original-imahgfnytht5rghh.jpeg?q=70",
         "title":"Samsung Galaxy Z Fold7 5G (Silver Shadow, 256 GB)",
+        "Internalcheck":"256",
         "green":"4.7",
         "Ratings":"72 Ratings &  0 Reviews",
         "RAM":"12 GB RAM |",
@@ -179,6 +188,7 @@
         "id":11,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/j/t/v/-original-imahavdv28z4nrkn.jpeg?q=70",
         "title":"vivo T4x 5G (Pronto Purple, 128 GB)",
+        "Internalcheck":"128",
         "green":"4.4",
         "Ratings":"1,14,273 Ratings &  5,692 Reviews",
         "RAM":"6 GB RAM |",
@@ -201,6 +211,7 @@
         "id":12,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/o/j/d/-original-imahgy25zuwqzzye.jpeg?q=70",
         "title":"Samsung Galaxy A35 5G (Awesome Iceblue, 256 GB)",
+        "Internalcheck":"256",
         "green":"4.3",
         "Ratings":"27,594 Ratings &  1,747 Reviews",
         "RAM":"8 GB RAM |",
@@ -222,6 +233,7 @@
         "id":13,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/a/x/a/note-50s-5g-x6870-infinix-original-imahed76tuzgybtk.jpeg?q=70",
         "title":"Infinix Note 50s 5G+ (Titanium Grey, 128 GB)",
+        "Internalcheck":"128",
         "green":"4.4",
         "Ratings":"3,178 Ratings &  226 Reviews",
         "RAM":"6 GB RAM |",
@@ -239,11 +251,8 @@
         "upto":"₹17,750",
         "bankoffer":"Bank Offer",
         "seller":"Bestseller"
-        
     }
-]                                                      
-
-
+]      
     
                                 
 
