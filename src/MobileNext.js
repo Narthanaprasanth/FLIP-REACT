@@ -9,6 +9,7 @@ function MobileNext(){
     const [products,setproduct]=useState([])
     const [Ram,setRam]=useState([])
 
+    const [RamFilter,setRamFilter]=useState([])
     useEffect(()=>{
         fetch("/Apple.json")
         .then((res)=>res.json())
@@ -19,20 +20,30 @@ function MobileNext(){
             setRam(uniqueRam)
         })
     },[])
+
+    //FILTERING LOGIC
+
+    const filteredProducts=products.filter((p)=>{
+        const matchCategory=
+         RamFilter.length===0 || RamFilter.includes(p.RAMcheck)
+
+    })
     return(
         <>
          <div><Header1/></div>
          <div className="body-container">
-            <div className="filter-container2"><Filter2 Ram={Ram}/></div>
-            <div className="Products-container2"><Product2/></div>
+            <div className="filter-container2"><Filter2 Ram={Ram} setRamFilter={setRamFilter}/></div>
+            
+            <div className="Products-container2"><Product2 /></div>
          </div>
-         </>
-                                            
-        
+         </>   
 
     )
 }
-export default MobileNext
+export default MobileNext                      
+
+
+
                               
                                      
                                             
@@ -40,4 +51,3 @@ export default MobileNext
 
 
   
-            

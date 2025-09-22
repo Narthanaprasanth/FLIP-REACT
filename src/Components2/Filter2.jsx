@@ -47,7 +47,7 @@ function Filter2({Ram}){
                                     {Ram.filter(c=>c && c.trim()!=="").map((c,i)=>(
                                        <label key={i}> <input type="checkbox" />
                                        <div className="each2">{c}</div>
-                                
+                                      
                                        </label>
                                       ))}
                                 </div>
@@ -55,15 +55,14 @@ function Filter2({Ram}){
                         </div>
                      </div>
             </div>
-        </div>
+        </div>                      
     )
 }
 export default Filter2
 
 
-
-                                                 
-         
+     
+    
 
 
 
