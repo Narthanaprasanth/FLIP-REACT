@@ -32,10 +32,10 @@ function Product2({products}) {
                             <div className="high2">Price -- High to Low</div>
                             <div className="new2">Newest First</div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
             </div>                     
-
+                                  
             {/* -----------PRODUCT-LISTING------------- */}
             <div className="product-listing1">
                 {products.map((item) => (

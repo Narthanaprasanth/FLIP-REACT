@@ -22,7 +22,7 @@ function Header1() {
           </div>             
         </div>  
       </div>                                                                           
-              
+                          
 {/* SEARCH BAR */}
     <div className="searchbar-container2">
       <div className="searchbar2">
@@ -75,7 +75,6 @@ function Header1() {
     </div>
   </div>
 
-
 {/* SUB HEADER */}
 <div className="subheader-container2">
   <div className="sub-header2">
@@ -112,8 +111,8 @@ function Header1() {
 </div>
 </>
   );   
-}   
-
+}         
+    
 export default Header1;
   
          
