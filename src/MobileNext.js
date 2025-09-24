@@ -25,6 +25,7 @@ function MobileNext() {
   const [SecondaryFilter,setSecondaryFilter]=useState([])
   const [rating,setrating]=useState([])
   const [ratingFilter,setratingFilter]=useState([])
+  const [priceFilter,setpriceFilter]=useState({min:0,max:Infinity})
 
   useEffect(() => {
     fetch("/Apple.json")
@@ -98,7 +99,7 @@ function MobileNext() {
       BatteryFilter.length === 0 || BatteryFilter.some((range) => p.batterycheck >= range.min && p.batterycheck <= range.max)
                              
     const matchdiscount =
-      DiscountFilter.length === 0 || DiscountFilter.some((range) => p.discount >= range.min && p.discount <= range.max)
+      DiscountFilter.length === 0 || DiscountFilter.some((range) => p.discount >= range.min && p.discount <= range.max)   
 
     const matchprimary=
       primaryFilter.length===0|| primaryFilter.some((range)=>p.primary>=range.min && p.primary<=range.max)
@@ -109,11 +110,17 @@ function MobileNext() {
     const matchrating=
       ratingFilter.length===0||ratingFilter.some((range)=>p.green>=range.min&&p.green<=range.max)
 
-    return matchRam && matchInternal && brandmatch && matchScreen && matchbattery && matchdiscount&& matchprimary && matchsecondary && matchrating;
+     const price =
+       parseInt(p.price.replace(/₹|,/g, ""));
+
+      
+       
+
+    return matchRam && matchInternal && brandmatch && matchScreen && matchbattery && matchdiscount&& matchprimary && matchsecondary && matchrating &&   price >= priceFilter.min && price <= priceFilter.max;;
   });
   return(                 
     <>                                                     
-      <div><Header1 /></div>
+      <div><Header1 /></div>  
       <div className="body-container">   
      
         <div>        
@@ -127,6 +134,7 @@ function MobileNext() {
             Primary={Primary} setPrimaryFilter={setPrimaryFilter}
             Secondary={Secondary} setSecondaryFilter={setSecondaryFilter}
             rating={rating} setratingFilter={setratingFilter}
+            priceFilter={priceFilter} setpriceFilter={setpriceFilter}
           />
          <Hon/>
           
@@ -145,3 +153,5 @@ function MobileNext() {
 }
 
 export default MobileNext;
+        
+       

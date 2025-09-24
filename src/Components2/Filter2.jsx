@@ -1,6 +1,6 @@
 import React from "react";
 import "./Flip2.css"
-function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBrandFilter, Screen, setScreenFilter, battery, setBatteryFilter, Discount, setDiscountFilter, Primary, setPrimaryFilter, Secondary, setSecondaryFilter, rating, setratingFilter }) {
+function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBrandFilter, Screen, setScreenFilter, battery, setBatteryFilter, Discount, setDiscountFilter, Primary, setPrimaryFilter, Secondary, setSecondaryFilter, rating, setratingFilter,priceFilter,setpriceFilter }) {
     const toggleSelection = (value, setFilter) => {
         setFilter((prev) =>
             prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
@@ -290,7 +290,7 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
 
                         <div className="price-select2">
                             <div className="min-container">
-                                <select className="min-select" >
+                                <select className="min-select" value={priceFilter.min} onChange={(e)=>setpriceFilter(prev=>({...prev,min:e.target.value==="min"?0:parseInt(e.target.value)}))}>
                                     <option className="op" value="min">Min</option>
                                     <option className="op" value="10000">₹10000</option>
                                     <option className="op" value="15000">₹15000</option>
@@ -300,7 +300,7 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                             </div>
                             <div className="to">to</div>
                             <div className="max-container">
-                                <select className="max-select">
+                                <select className="max-select" value={priceFilter.max} onChange={(e)=>setpriceFilter(prev=>({...prev,max:e.target.value==="Max"?Infinity:parseInt(e.target.value)}))}>
                                     <option className="op" value="10000">₹10000</option>
                                     <option className="op" value="15000">₹15000</option>
                                     <option className="op" value="20000">₹20000</option>
@@ -310,18 +310,64 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </>
-    )       
-}                             
+    )
+}
 export default Filter2
 
 
 
 
 
+   
+
+
+       
+
+
+  
+      
+
+         
+
+
+
+    
+   
+
+
+                  
+
+
+  
+   
+
+
+       
+
+
+
+
+
+
+
+                                                                                                                                                                                                             
+
+
+                        
+
+
+
+
+
+
+                                                           
+
+
+                                                                                                                                                                                        
+                                                                                                                                                
 
 
 
@@ -341,6 +387,17 @@ export default Filter2
 
 
 
+
+
+
+
+
+
+
+                   
+                     
+
+                                                  
 
 
 
