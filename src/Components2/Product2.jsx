@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from "react";
 function Product2({products}) {
+   const [productList,setproductList]=useState(products)
+
+    useEffect(()=>{
+    setproductList(products)
+   },[products])
+
+   const sortpricebylowprice=()=>{
+    const sorted=[...productList].sort((a,b)=>{
+        const priceA=typeof a.price==='string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')):a.price;
+        const priceB=typeof b.price==='string' ? parseFloat(b.price.replace(/[^0-9.]/g,'')):b.price;
+        return priceA-priceB
+    })
+    setproductList(sorted)
+   }
    
     if(products.length===0){
         return <h3>No products found</h3>
@@ -28,7 +42,7 @@ function Product2({products}) {
                             <span className="sort2">Sort By</span>
                             <div className="relevence2">Relevance</div>
                             <div className="popularity2">Popularity</div>
-                            <div className="low2">Price -- Low to High</div>
+                            <div className="low2" onClick={sortpricebylowprice}>Price -- Low to High</div>
                             <div className="high2">Price -- High to Low</div>
                             <div className="new2">Newest First</div>
                         </div>
@@ -38,7 +52,7 @@ function Product2({products}) {
                                   
             {/* -----------PRODUCT-LISTING------------- */}
             <div className="product-listing1">
-                {products.map((item) => (
+                {productList.map((item) => (
                     <div className="product-listing2">
                         <div className="product-listing3">
                             <div className="product-listing4">

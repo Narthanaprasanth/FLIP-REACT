@@ -329,6 +329,7 @@ body {
 .category,
 .category * {
   background-color: inherit;
+  text-decoration: none;
 
 }
 
@@ -337,6 +338,7 @@ body {
   top: 75px;
   width: 100%;
   background-color: inherit;
+  
 }
 
 .inner {
@@ -2485,11 +2487,13 @@ cursor: pointer;
   /* FOOTER */
   .footer-container {
     overflow: hidden;
+  
   }
 
   .footer-content {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+     
   }
 
   .deep {

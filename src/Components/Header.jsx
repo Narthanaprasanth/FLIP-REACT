@@ -69,7 +69,7 @@ function Header() {
                         </form>                                                        
                         {/* DROP DOWN */}    
                         <div className="search-down">
-                            {suggestions.length > 0 && (
+                            { isfocused && suggestions.length > 0 && (
                                 <ul className="search-dropdown">
                                     {suggestions.map((item, index) => (
                                         <li key={index} 
@@ -100,7 +100,7 @@ function Header() {
                                         <div className="tri"></div>
                                         <div className="show">
                                             <p>Login</p>
-                                        </div>
+                                        </div>   
                                     </>
                                 )}
                             </>
@@ -110,7 +110,7 @@ function Header() {
                                     <div className="sign">Sign Up</div>
                                 </div>
                                 <div className="login-data">
-
+                                                            
                                     <div className="data">
                                         <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/profile-52e0dc.svg" alt="My Profile" width="18" height="18"></img>
                                         <span>My Profile</span>
@@ -135,12 +135,12 @@ function Header() {
                                         <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/giftCard-bd87e1.svg" alt="Gift Cards" width="18" height="18"></img>
                                         <span>Gift Cards</span>
                                     </div>
-                                </div>                              
+                                </div>                                      
                             </div>
                         </div>
                         <div className="cart-container">
                             <div className="cart">
-                                <img style={{ background: "white" }} src={cart} alt="" />
+                                <img style={{ background: "white"}} src={cart} alt="" />
                                 <span style={{ fontFamily: "Regular" }}>Cart</span>
                             </div>
                         </div>
@@ -180,6 +180,7 @@ function Header() {
     )
 }
 export default Header
+                 
 
 
 
@@ -187,6 +188,11 @@ export default Header
 
 
 
+                
+
+
+
+   
 
 
 

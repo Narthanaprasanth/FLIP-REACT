@@ -3,6 +3,8 @@ import Header1 from "./Components2/Header1";
 import Filter2 from "./Components2/Filter2";
 import Product2 from "./Components2/Product2";
 import Hon from "./Components2/Hon";
+import Footer from "./Components/Footer";
+
 import "./Components2/Flip2.css";
 
 function MobileNext() {
@@ -19,13 +21,13 @@ function MobileNext() {
   const [BatteryFilter, setBatteryFilter] = useState([])
   const [Discount, setDiscount] = useState([])
   const [DiscountFilter, setDiscountFilter] = useState([])
-  const [Primary,setPrimary]=useState([])
-  const [primaryFilter,setPrimaryFilter]=useState([])
-  const [Secondary,setSecondary]=useState([])
-  const [SecondaryFilter,setSecondaryFilter]=useState([])
-  const [rating,setrating]=useState([])
-  const [ratingFilter,setratingFilter]=useState([])
-  const [priceFilter,setpriceFilter]=useState({min:0,max:Infinity})
+  const [Primary, setPrimary] = useState([])
+  const [primaryFilter, setPrimaryFilter] = useState([])
+  const [Secondary, setSecondary] = useState([])
+  const [SecondaryFilter, setSecondaryFilter] = useState([])
+  const [rating, setrating] = useState([])
+  const [ratingFilter, setratingFilter] = useState([])
+  const [priceFilter, setpriceFilter] = useState({ min: 0, max: Infinity })
 
   useEffect(() => {
     fetch("/Apple.json")
@@ -54,17 +56,17 @@ function MobileNext() {
           { label: "20% or more", min: 20, max: Infinity },
           { label: "30% or more", min: 30, max: Infinity }
         ]
-        const uniquePrimary=[
-          {label:"12 - 15.9 MP",min:12,max:15.9},
-          {label:"48 - 63.9 MP" ,min:48,max:63.9}  
+        const uniquePrimary = [
+          { label: "12 - 15.9 MP", min: 12, max: 15.9 },
+          { label: "48 - 63.9 MP", min: 48, max: 63.9 }
         ]
-        const uniqueSecondary=[
-          {label:"12 - 15.9 MP",min:12,max:15.9},
-          {label:"5 - 7.9",min:5,max:7.9}
+        const uniqueSecondary = [
+          { label: "12 - 15.9 MP", min: 12, max: 15.9 },
+          { label: "5 - 7.9", min: 5, max: 7.9 }
         ]
-        const uniqueRating=[
-          {label:"4★ & above",min:4,max:Infinity},
-          {label:"5★ & above",min:5,max:Infinity}
+        const uniqueRating = [
+          { label: "4★ & above", min: 4, max: Infinity },
+          { label: "5★ & above", min: 5, max: Infinity }
         ]
 
         setRam(uniqueRam)
@@ -76,8 +78,6 @@ function MobileNext() {
         setPrimary(uniquePrimary)
         setSecondary(uniqueSecondary)
         setrating(uniqueRating)
-
-
       });
   }, []);
 
@@ -97,34 +97,30 @@ function MobileNext() {
 
     const matchbattery =
       BatteryFilter.length === 0 || BatteryFilter.some((range) => p.batterycheck >= range.min && p.batterycheck <= range.max)
-                             
+
     const matchdiscount =
-      DiscountFilter.length === 0 || DiscountFilter.some((range) => p.discount >= range.min && p.discount <= range.max)   
+      DiscountFilter.length === 0 || DiscountFilter.some((range) => p.discount >= range.min && p.discount <= range.max)
 
-    const matchprimary=
-      primaryFilter.length===0|| primaryFilter.some((range)=>p.primary>=range.min && p.primary<=range.max)
+    const matchprimary =
+      primaryFilter.length === 0 || primaryFilter.some((range) => p.primary >= range.min && p.primary <= range.max)
 
-    const matchsecondary=
-      SecondaryFilter.length===0||SecondaryFilter.some((range)=>p.secondary>=range.min&&p.secondary<=range.max)
-    
-    const matchrating=
-      ratingFilter.length===0||ratingFilter.some((range)=>p.green>=range.min&&p.green<=range.max)
+    const matchsecondary =
+      SecondaryFilter.length === 0 || SecondaryFilter.some((range) => p.secondary >= range.min && p.secondary <= range.max)
 
-     const price =
-       parseInt(p.price.replace(/₹|,/g, ""));
+    const matchrating =
+      ratingFilter.length === 0 || ratingFilter.some((range) => p.green >= range.min && p.green <= range.max)
+    const price =
+      parseInt(p.price.replace(/₹|,/g, ""));
 
-      
-       
-
-    return matchRam && matchInternal && brandmatch && matchScreen && matchbattery && matchdiscount&& matchprimary && matchsecondary && matchrating &&   price >= priceFilter.min && price <= priceFilter.max;;
+    return matchRam && matchInternal && brandmatch && matchScreen && matchbattery && matchdiscount && matchprimary && matchsecondary && matchrating && price >= priceFilter.min && price <= priceFilter.max;
   });
-  return(                 
-    <>                                                     
-      <div><Header1 /></div>  
-      <div className="body-container">   
-     
-        <div>        
-          <Filter2      
+  return (
+    <>
+      <div><Header1 /></div>
+      <div className="body-container">
+
+        <div>
+          <Filter2
             Ram={Ram} setRamFilter={setRamFilter}
             internal={internal} setInternalFilter={setInternalFilter}
             Brand={Brand} setBrandFilter={setBrandFilter}
@@ -136,22 +132,17 @@ function MobileNext() {
             rating={rating} setratingFilter={setratingFilter}
             priceFilter={priceFilter} setpriceFilter={setpriceFilter}
           />
-         <Hon/>
-          
+          <Hon />
         </div>
-       
-          
-        
-          <div className="Products-container2">
-          <Product2 products={filteredProducts}/>       
-        </div> 
-       
-                    
+        <div className="Products-container2">
+          <Product2 products={filteredProducts} />
+        </div>
       </div>
+      <Footer />
+
     </>
   );
 }
 
 export default MobileNext;
-        
-       
+

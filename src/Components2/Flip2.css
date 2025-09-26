@@ -131,9 +131,82 @@ body {
     flex: 0 0 auto;
     margin: 0px 20px;
     max-width: 150px;
+    
 
 }
+.tri2 {
+  border-left: 13px solid transparent;
+  border-top: 6px solid transparent;
+  border-right: 13px solid transparent;
+  border-bottom: 13px solid #ffffff; 
+  top: 22px;
+  position: relative;
+  right: 75px;
+  display: none;
+}
+.login-bar2:hover .login-down{
+    display: block;
+}
+.login-bar2:hover .tri2{
+    display: block;
+}
+.login-down{
+    position: absolute;
+    background-color: white;
+    z-index: 9;
+    padding: 16px;
+    overflow: auto;
+    right: 40%;
+    transform: translateX(50%);
+    box-shadow:0 4px 16px 0 rgba(0,0,0,.2) ;
+    top: 52px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    max-width: 240px;
+    margin-top: 6px;
+    min-width: 24px;    
+    color: #212121;
+    font-size: 14px;
+    font-weight: 400;
+    border-color: #f0f0f0;
+    text-align: left;
+    width: 240px;
+    display: none;
+}
+.profile-cont2{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #f0f0f0;
+}
+.login-down2{
+    margin: -16px;
+    
+}
+.cust2{
+    padding: 20px;
+    text-align: center;
+    
+}
+.cust3{
+    display: flex;
+    font-weight: 500;
+    justify-content: space-between;
+}
+.profile-cont{
+    border-top: 1px solid #f0f0f0;
+}
 
+.profile-cont2{
+    padding: 16px 20px !important;
+    
+}
+.pro2{
+    margin-left: 12px;
+}
+.new-sign{
+    color: #2874f0;
+}
 .login-bar2 {
     display: flex;
     align-items: center;
@@ -193,11 +266,62 @@ body {
     height: 100%;
     color: white;
     font-family: "SemiBold";
-}
 
+}
+.more-container2 :hover .more-down2{
+    display: block;
+}
+.more-container2 :hover .tri3{
+display: block;
+}
 .more-text {
     display: flex;
     flex-direction: row;
+}
+.more-down2{
+    position: absolute;
+    z-index: 999;
+    top: 55px;
+    background-color: white;
+    box-shadow: 0px 4px 16px 0px rgb(0, 0,0,0.2);
+    width: 240px;
+    right: 300px;
+    display: none;
+    
+}
+.more-data2 div{
+    margin-left: 12px;
+    font-weight: 100;
+    font-family: "Regular";
+    font-size: 13px;
+    
+}
+.more-li{
+    list-style: none;
+}
+.tri3 {
+  border-left: 13px solid transparent;
+  border-top: 9px solid transparent;
+  border-right: 13px solid transparent;
+  border-bottom: 13px solid #ffffff; 
+  top: 18px;
+  position: relative;
+  right: 35px;
+  z-index: 999999;
+  display: none;
+}
+.more-ul{
+    text-align: left;
+    font-size: 14px;
+    color: #212121;
+    font-weight: 100;
+}
+.more-data2{
+    display: flex;
+    flex-direction: row;
+    padding: 16px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    opacity: .2px;
 }
 
 .more-date {
@@ -209,6 +333,11 @@ body {
     font-size: 16px;
     letter-spacing: .1px;
     font-weight: 500;
+}
+.more-container2 :hover .more-svg{
+    transform: rotate(180deg);
+    margin-top: 3px;
+    margin-left: 8px;
 }
 
 .more-svg svg {
@@ -264,6 +393,7 @@ body {
 .sub-header2 {
     background-color: white;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .16);
+    position: relative;
 }
 
 .sub-inner2 {
@@ -298,7 +428,6 @@ body {
 .body-container {
     width: 100%;
     margin: 0 auto;
-    /* min-height: 978px; */
     max-width: 1680px;
     padding: 8px;
     position: relative;
@@ -359,7 +488,6 @@ body {
     padding: 16px;
     border-bottom: 1px solid #f0f0f0;
 }
-
 .Categories-text {
     font-size: 11px;
     font-weight: 500;
@@ -1160,4 +1288,210 @@ body {
     padding: 0 5px;
     outline: none;
 }
+
+
+
+.drop-container {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    position: absolute;
+    top: 11px;
+    left: 0px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: white;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .16);
+    width: 1200px;
+
+}
+.drop-inside {
+    background-color: white;
+} 
+
+.menu-item {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+   
+    background: white;
+    z-index: 10;
+}
+
+.menu-item:hover .dropdown {
+    display: block;
+}
+.dropdown1 {
+    display: none;
+    position: absolute;
+   right: 280px;
+    background: white;
+    z-index: 10;
+}
+
+.menu-item:hover .dropdown1 {
+    display: block;
+}
+.dropdown2 {
+    display: none;
+    position: absolute;
+   right: 380px;
+    background: white;
+    z-index: 10;
+}  
+.sub-inner2 span:hover{
+    color:#2874f0;
+      
+}
+.menu-item:hover svg{
+    transform: rotate(90deg);
+    fill: #2874f0;
+    opacity: 1;
+}
+
+.menu-item:hover .dropdown2 {
+    display: block;
+}
+
+.dropdown3 {
+    display: none;
+    position: absolute;
+   right: 490px;
+    background: white;
+    z-index: 10;
+}
+
+.menu-item:hover .dropdown3 {
+    display: block;
+}
+.dropdown4 {
+    display: none;
+    position: absolute;
+   right: 640px;
+    background: white;
+    z-index: 10;
+}
+
+.menu-item:hover .dropdown4 {
+    display: block;
+}
+.dropdown5 {
+    display: none;
+    position: absolute;
+   right: 810px;
+    background: white;
+    z-index: 10;
+}
+.menu-item:hover{
+    color: blue;
+}
+.menu-item:hover .dropdown5 {
+    display: block;
+}
+.dropdown6 {
+    display: none; 
+    position: absolute;
+   right: 1020px;
+    background: white;
+    z-index: 10;
+}
+
+.menu-item:hover .dropdown6 {
+    display: block;
+}
+.drop-inside-1 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 0 25px;
+    background-color: white;
+    width: 100%;
+    color: black;
+}
+
+.drop-inside-1 a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 0;
+    color: #666;
+    font-size: 13px;
+    font-family: "Regular";
+    white-space: nowrap;
+}
+
+.drop-inside-1 h2 {
+    margin-top: 5px;
+    padding: 8px 0;
+    color: #212121;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: "Regular";
+    padding: 8px 0px;
+    white-space: nowrap;
+}
+
+.drop-inside-2 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+    background-color: #f9f9f9;
+    width: 100%;
+    color: black;
+    flex-wrap: nowrap;
+
+}
+
+.drop-inside-2 a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 0;
+    color: #666;
+    font-size: 13px;
+    font-family: "Regular";
+    display: flex;
+    white-space: nowrap;
+}
+
+.drop-inside-2 h2 {
+    margin-top: 5px;
+    padding: 8px 0;
+    color: #212121;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: "Regular";
+    padding: 8px 0px;
+    white-space: nowrap;
+}
+.product-listing3 :hover .product-title{
+    color: blue;
+}
+
+
+
+
+             
+
+    
   
+  
+                                        
+                   
+                                  
+          
+
+     
+ 
+           
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
