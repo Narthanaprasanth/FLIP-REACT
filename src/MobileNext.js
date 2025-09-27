@@ -89,7 +89,7 @@ function MobileNext() {
     const matchInternal =
       internalFilter.length === 0 || internalFilter.some((range) => p.Internalcheck >= range.min && p.Internalcheck <= range.max);
 
-    const brandmatch =
+    const brandmatch =  
       BrandFilter.length === 0 || BrandFilter.includes(p.brand)
 
     const matchScreen =
@@ -115,21 +115,20 @@ function MobileNext() {
     return matchRam && matchInternal && brandmatch && matchScreen && matchbattery && matchdiscount && matchprimary && matchsecondary && matchrating && price >= priceFilter.min && price <= priceFilter.max;
   });
   return (
-    <>
-      <div><Header1 /></div>
-      <div className="body-container">
-
-        <div>
-          <Filter2
-            Ram={Ram} setRamFilter={setRamFilter}
-            internal={internal} setInternalFilter={setInternalFilter}
-            Brand={Brand} setBrandFilter={setBrandFilter}
-            Screen={Screen} setScreenFilter={setScreenFilter}
-            battery={battery} setBatteryFilter={setBatteryFilter}
-            Discount={Discount} setDiscountFilter={setDiscountFilter}
-            Primary={Primary} setPrimaryFilter={setPrimaryFilter}
-            Secondary={Secondary} setSecondaryFilter={setSecondaryFilter}
-            rating={rating} setratingFilter={setratingFilter}
+    <>                                                          
+      <div><Header1/></div>
+      <div className="body-container">           
+        <div>                               
+          <Filter2                                                  
+            Ram={Ram} setRamFilter={setRamFilter} RamFilter={RamFilter}
+            internal={internal} setInternalFilter={setInternalFilter} internalFilter={internalFilter}
+            Brand={Brand} setBrandFilter={setBrandFilter} BrandFilter={BrandFilter}
+            Screen={Screen} setScreenFilter={setScreenFilter}  ScreenFilter={ScreenFilter}
+            battery={battery} setBatteryFilter={setBatteryFilter} BatteryFilter={BatteryFilter}
+            Discount={Discount} setDiscountFilter={setDiscountFilter} DiscountFilter={DiscountFilter}
+            Primary={Primary} setPrimaryFilter={setPrimaryFilter} primaryFilter={primaryFilter}
+          Secondary={Secondary} setSecondaryFilter={setSecondaryFilter} SecondaryFilter={SecondaryFilter}
+            rating={rating} setratingFilter={setratingFilter} ratingFilter={ratingFilter}
             priceFilter={priceFilter} setpriceFilter={setpriceFilter}
           />
           <Hon />
@@ -138,8 +137,7 @@ function MobileNext() {
           <Product2 products={filteredProducts} />
         </div>
       </div>
-      <Footer />
-
+      <Footer />      
     </>
   );
 }

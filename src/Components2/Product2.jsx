@@ -1,21 +1,43 @@
 import React, { useState, useEffect } from "react";
-function Product2({products}) {
-   const [productList,setproductList]=useState(products)
+function Product2({ products }) {
+    const [productList, setproductList] = useState(products)
+    const [activesort, setactivesort] = useState("popularity")
 
-    useEffect(()=>{
-    setproductList(products)
-   },[products])
+    useEffect(() => {
+        setproductList(products)
+    }, [products])
 
-   const sortpricebylowprice=()=>{
-    const sorted=[...productList].sort((a,b)=>{
-        const priceA=typeof a.price==='string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')):a.price;
-        const priceB=typeof b.price==='string' ? parseFloat(b.price.replace(/[^0-9.]/g,'')):b.price;
-        return priceA-priceB
-    })
-    setproductList(sorted)
-   }
-   
-    if(products.length===0){
+    const sortpricebylowprice = () => {
+        const sorted = [...productList].sort((a, b) => {
+            const priceA = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price;
+            const priceB = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price;
+            return priceA - priceB
+        })
+        setproductList(sorted)
+        setactivesort("low")
+    }
+
+    const sortpricebyhighprice = () => {
+        const sorted = [...productList].sort((a, b) => {
+            const priceA = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price;
+            const priceB = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price;
+            return priceB - priceA
+        })
+        setproductList(sorted)
+        setactivesort("high")
+    }
+
+    const newest = (id) => {
+        const filtered = [...productList].sort((a, b) => a.id - b.id)
+        setproductList(filtered)
+        setactivesort("new")
+    }
+    const popularity = (id) => {
+        const filtered = [...productList].sort((a, b) => a.id - b.id)
+        setproductList(filtered)
+        setactivesort("popularity")
+    }
+    if (products.length === 0) {
         return <h3>No products found</h3>
     }
     return (
@@ -40,16 +62,16 @@ function Product2({products}) {
                         <span className="sort-span">Showing 1 – 24 of 707 results for "apple mobiles"</span>
                         <div className="sort-container">
                             <span className="sort2">Sort By</span>
-                            <div className="relevence2">Relevance</div>
-                            <div className="popularity2">Popularity</div>
-                            <div className="low2" onClick={sortpricebylowprice}>Price -- Low to High</div>
-                            <div className="high2">Price -- High to Low</div>
-                            <div className="new2">Newest First</div>
+                            {/* <div className="relevence2">Relevance</div> */}
+                            <div className={`popularity2 ${activesort === "popularity" ? "activesort" : ""}`} onClick={popularity}>Popularity</div>
+                            <div className={`low2 ${activesort === "low" ? "activesort" : ""}`} onClick={sortpricebylowprice}>Price -- Low to High</div>
+                            <div className={`high2 ${activesort === "high" ? "activesort" : ""}`} onClick={sortpricebyhighprice}>Price -- High to Low</div>
+                            <div className={`new2 ${activesort === "new" ? "activesort" : ""}`} onClick={newest}>Newest First</div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-            </div>                     
-                                  
+            </div>
+
             {/* -----------PRODUCT-LISTING------------- */}
             <div className="product-listing1">
                 {productList.map((item) => (
@@ -64,7 +86,7 @@ function Product2({products}) {
                                         </div>
                                         )}
 
-                                        <div className="apple-item2">                 
+                                        <div className="apple-item2">
                                             <div className="apple-item3">
                                                 <div className="apple-item4">
                                                     <img src={item.image} alt="" />
@@ -73,7 +95,7 @@ function Product2({products}) {
                                             {item.unavailable && (<div className="unavailable">
                                                 <span>{item.unavailable}</span>
                                             </div>)}
-                                            
+
                                         </div>
                                         <div className="compare2">
                                             <div className="compare3">
@@ -107,14 +129,14 @@ function Product2({products}) {
                                                     <li className="rom">{item.Frontcamera}</li>
                                                     {item.battery && (<li className="rom">{item.battery}</li>)}
                                                     <li className="rom">{item.Processor}</li>
-                                                    <li className="rom">{item.warrenty}</li>
+                                                    <li className="rom">{item.warrenty}</li>                                  
 
                                                 </ul>
                                             </div>
 
                                         </div>
 
-                                        <div className="price-container2">                                                     
+                                        <div className="price-container2">
                                             <div className="price2">
                                                 <div className="price3">
                                                     <div className="rate">
@@ -163,6 +185,7 @@ function Product2({products}) {
     )
 }
 export default Product2
+  
 
 
 

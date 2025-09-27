@@ -1,11 +1,10 @@
 [
     {
-        "id":1,
+        "id":6,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70",
         "title":"Apple iPhone 14 (Starlight, 128 GB)",
         "Internalcheck":"128",
         "green":"4.6",
-       
         "Ratings":"3,14,394 Ratings &  11,694 Reviews",
         "ROM":"128 GB ROM",
         "Display":"15.49 cm (6.1 inch) Super Retina XDR Display",
@@ -26,7 +25,7 @@
         "brand":"Apple"
     },
     {
-        "id":2,
+        "id":5,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
         "title":"Apple iPhone 14 (Blue, 128 GB)",
         "Internalcheck":"128",
@@ -51,7 +50,7 @@
        
     },
       {
-        "id":12,
+        "id":1,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/o/j/d/-original-imahgy25zuwqzzye.jpeg?q=70",
         "title":"Samsung Galaxy A35 5G (Awesome Iceblue, 256 GB)",
         "Internalcheck":"256",
@@ -79,7 +78,7 @@
         "brand":"Samsung"
     },
     {
-        "id":3,
+        "id":4,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/9/e/e/-original-imaghx9q5rvcdghy.jpeg?q=70",
         "title":"Apple iPhone 14 (Midnight, 128 GB)",
         "Internalcheck":"128",
@@ -104,7 +103,7 @@
     },
 
      {
-        "id":4,
+        "id":7,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/c/e/5/-original-imahft5g9uthykuh.jpeg?q=70",
         "title":"Apple iPhone 17 (White, 256 GB)",
         "Internalcheck":"256",
@@ -126,7 +125,7 @@
         "brnad":"Apple"
     },
     {
-        "id":5,
+        "id":3,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
         "title":"Apple iPhone 14 (Blue, 256 GB)",
         "Internalcheck":"256",
@@ -150,7 +149,7 @@
         "brand":"Apple"
     },
      {
-        "id":6,
+        "id":2,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/e/x/e/-original-imah4jyw4fpqe7ru.jpeg?q=70",
         "title":"Apple iPhone 16 Pro (Black Titanium, 256 GB)",
         "Internalcheck":"256",
@@ -175,7 +174,7 @@
         "brnad":"Apple"
     },
    {
-        "id":8,
+        "id":12,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/a/o/v/-original-imagp27avqpgejaf.jpeg?q=70",
         "title":"Infinix Smart 7 HD (Green Apple, 64 GB)",
         "Internalcheck":"64",
@@ -203,7 +202,7 @@
         "Apple":"Infinix"
     },
     {
-        "id":9,
+        "id":11,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/6/9/t/-original-imahfkvfhpfaftmb.jpeg?q=70",
         "title":"vivo T4 Lite 5G Charger in the Box (Titanium Gold, 128 GB)",
         "Internalcheck":"128",
@@ -232,7 +231,7 @@
         "brand":"vivo"
     },
     {
-        "id":10,
+        "id":8,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/2/f/7/-original-imahgfnytht5rghh.jpeg?q=70",
         "title":"Samsung Galaxy Z Fold7 5G (Silver Shadow, 256 GB)",
         "Internalcheck":"256",
@@ -253,14 +252,14 @@
         "warrenty":"1 Year Manufacturer Warranty for Device and 6 Months for In-Box Accessories",
         "price":"₹1,74,999",
         "fassure":"https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_9e47c1.png",
-        "ratecut":"",
+        "ratecut":"",                               
         "off":"",
-        "upto":"₹40,400",
+        "upto":"₹40,400",  
         "bankoffer":"Bank Offer"  ,
         "brand":"Samsung"
     },
     {
-        "id":11,
+        "id":10,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/j/t/v/-original-imahavdv28z4nrkn.jpeg?q=70",
         "title":"vivo T4x 5G (Pronto Purple, 128 GB)",
         "Internalcheck":"128",
@@ -290,7 +289,7 @@
     },         
   
     {
-        "id":13,
+        "id":9,
         "image":"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/a/x/a/note-50s-5g-x6870-infinix-original-imahed76tuzgybtk.jpeg?q=70",
         "title":"Infinix Note 50s 5G+ (Titanium Grey, 128 GB)",
         "Internalcheck":"128",

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Flip2.css"
-function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBrandFilter, Screen, setScreenFilter, battery, setBatteryFilter, Discount, setDiscountFilter, Primary, setPrimaryFilter, Secondary, setSecondaryFilter, rating, setratingFilter,priceFilter,setpriceFilter }) {
+function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBrandFilter, Screen, setScreenFilter, battery, setBatteryFilter, Discount, setDiscountFilter, Primary, setPrimaryFilter, Secondary, setSecondaryFilter, rating, setratingFilter, priceFilter, setpriceFilter, RamFilter, internalFilter, BrandFilter, ScreenFilter, BatteryFilter, DiscountFilter, primaryFilter, SecondaryFilter, ratingFilter }) {
     const toggleSelection = (value, setFilter) => {
         setFilter((prev) =>
             prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
@@ -11,13 +11,93 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
             <div className="filter-container2">
                 <div className="Filter-inner2">
                     <div className="Filter-container3">
-                        <div className="Filter-main2">
+                        <div className="Filter-main2">    
 
                             <div className="Filter-txt2">
                                 <div className="Filter-txt3">
                                     <div className="Filter-txt4">
-                                        <span>Filters</span>
+                                        <span>Filters</span>                        
                                     </div>
+                                    {(RamFilter.length > 0 ||
+                                        internalFilter.length > 0 ||
+                                        BrandFilter.length > 0 ||
+                                        ScreenFilter.length > 0 ||
+                                        BatteryFilter.length > 0 ||
+                                        DiscountFilter.length > 0 ||                             
+                                        primaryFilter.length > 0 ||                     
+                                        SecondaryFilter.length > 0 ||                  
+                                        ratingFilter.length > 0) &&
+                                        (<div className="clearall2" onClick={() => window.location.reload()}>
+                                            <span >CLEAR ALL</span>
+                                        </div>
+                                        )}
+                                </div>
+                                <div className="grey-text">
+                                    {/* RAM */}
+                                    {RamFilter.map((c, i) => (
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(c, setRamFilter)}>
+                                            <div className="cros2" >x</div>
+                                            <div className="text-display">{c}</div>
+                                        </div>
+                                    ))}
+                                    {/*INTERNAL  */}
+                                    {internalFilter.map((range, i) => (
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range.label, setInternalFilter)}>
+                                            <div className="cros2" >x</div>
+                                            <div className="text-display">{range.label}</div>
+                                        </div>
+
+                                    ))}
+                                    {/* Brand */}
+                                    {BrandFilter.map((b, i) => (
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(b, setBrandFilter)}>
+                                            <div className="cros2" >x</div>
+                                            <div className="text-display">{b}</div>
+                                        </div>
+                                    ))}
+                                    {/* SREEN FILTER */}
+                                    {ScreenFilter.map((range, i) => (
+                                        <div key={i} className="grey-text2">
+                                            <div className="cros2" onClick={() => toggleSelection(range.label, setScreenFilter)}>x</div>
+                                            <div className="text-display">{range.label}</div>
+                                        </div>
+                                    ))}
+                                    {/* BATTERY CAPACITY */}
+                                    {BatteryFilter.map((range, i) => (
+                                        <div key={i} className="grey-text2">
+                                            <div className="cros2" onClick={() => toggleSelection(range.label, setBatteryFilter)} >x</div>
+                                            <div className="text-display">{range.label}</div>
+                                        </div>
+                                    ))}
+                                    {/* DISCOUNT */}
+                                    {DiscountFilter.map((range, i) => (
+                                        <div key={i} className="grey-text2">
+                                            <div className="cros2" onClick={() => toggleSelection(range.label, setDiscountFilter)}>x</div>
+                                            <div className="text-display">{range.label}</div>
+                                        </div>
+
+                                    ))}
+                                    {/* PRIMARY CAMERA */}
+                                    {primaryFilter.map((range, i) => (
+                                        <div key={i} className="grey-text2">
+                                            <div className="cros2" onClick={() => toggleSelection(range.label, setPrimaryFilter)}>x</div>
+                                            <div className="text-display">{range.label}</div>
+                                        </div>
+                                    ))}
+                                    {/* SECONDARY CAMERA */}
+                                    {SecondaryFilter.map((range, i) => (
+                                        <div key={i} className="grey-text2">
+                                            <div className="cros2" onClick={() => toggleSelection(range.label, setSecondaryFilter)}>x</div>
+                                            <div className="text-display">{range.label}</div>
+                                        </div>
+                                    ))}
+                                    {/* CUSTOMER RATING */}
+                                    {ratingFilter.map((range, i) => (
+                                        <div key={i} className="grey-text2">
+                                            <div className="cros2" onClick={() => toggleSelection(range.label, setratingFilter)}>x</div>
+                                            <div className="text-display">{range.label}</div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -40,26 +120,34 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                    {/* RAM */}
+                    {/*RAM*/}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">RAM</div>
                             <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
 
+
+
                         <div className="options-main">
+                            {(RamFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setRamFilter([])} ><span>Clear all</span></div>
+                                </div>)}
+
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {Ram.map((c, i) => {
                                             if (!c) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(c, setRamFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={RamFilter.includes(c)} onChange={() => toggleSelection(c, setRamFilter)} />
                                                     <div className="each2">{c}</div>
                                                 </label>)
                                         })}
+
                                     </div>
                                 </div>
                             </div>
@@ -72,13 +160,18 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                             <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
                         <div className="options-main">
+                            {(internalFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setInternalFilter([])} ><span>Clear all</span></div>
+                                </div>)}
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {internal.map((range, i) => {
                                             if (!range) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(range, setInternalFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={internalFilter.some(r => r.label === range.label)} onChange={() => toggleSelection(range, setInternalFilter)} />
                                                     <div className="each2">{range.label}</div>
 
                                                 </label>)
@@ -95,13 +188,18 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                             <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
                         <div className="options-main">
+                            {(BrandFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setBrandFilter([])} ><span>Clear all</span></div>
+                                </div>)}
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {Brand.map((b, i) => {
                                             if (!b) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(b, setBrandFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={BrandFilter.includes(b)} onChange={() => toggleSelection(b, setBrandFilter)} />
                                                     <div className="each2">{b}</div>
 
                                                 </label>)
@@ -119,13 +217,18 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                         </div>
 
                         <div className="options-main">
+                            {(ScreenFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setScreenFilter([])} ><span>Clear all</span></div>
+                                </div>)}
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {Screen.map((range, i) => {
                                             if (!range) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(range, setScreenFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={ScreenFilter.some(s => s.label === range.label)} onChange={() => toggleSelection(range, setScreenFilter)} />
                                                     <div className="each2">{range.label}</div>
                                                 </label>)
                                         })}
@@ -142,13 +245,18 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                         </div>
 
                         <div className="options-main">
+                            {(BatteryFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setBatteryFilter([])} ><span>Clear all</span></div>
+                                </div>)}
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {battery.map((range, i) => {
                                             if (!range) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(range, setBatteryFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={BatteryFilter.some(b => b.label === range.label)} onChange={() => toggleSelection(range, setBatteryFilter)} />
                                                     <div className="each2">{range.label}</div>
                                                 </label>)
                                         })}
@@ -159,19 +267,25 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                     </div>
                     {/* DISCOUNT  */}
                     <div className="ram-container2">
+
                         <div className="ram-container3">
                             <div className="ram-main">DISCOUNT</div>
                             <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
 
                         <div className="options-main">
+                            {(DiscountFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setDiscountFilter([])} ><span>Clear all</span></div>
+                                </div>)}
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {Discount.map((range, i) => {
                                             if (!range) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(range, setDiscountFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={DiscountFilter.some(d => d.label === range.label)} onChange={() => toggleSelection(range, setDiscountFilter)} />
                                                     <div className="each2">{range.label}</div>
                                                 </label>)
                                         })}
@@ -188,13 +302,18 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                         </div>
 
                         <div className="options-main">
+                            {(primaryFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setPrimaryFilter([])} ><span>Clear all</span></div>
+                                </div>)}
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {Primary.map((range, i) => {
                                             if (!range) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(range, setPrimaryFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={primaryFilter.some(p => p.label === range.label)} onChange={() => toggleSelection(range, setPrimaryFilter)} />
                                                     <div className="each2">{range.label}</div>
                                                 </label>)
                                         })}
@@ -210,13 +329,18 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                             <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
                         <div className="options-main">
+                            {(SecondaryFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setSecondaryFilter([])} ><span>Clear all</span></div>
+                                </div>)}
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {Secondary.map((range, i) => {
                                             if (!range) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(range, setSecondaryFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={SecondaryFilter.some(s => s.label === range.label)} onChange={() => toggleSelection(range, setSecondaryFilter)} />
                                                     <div className="each2">{range.label}</div>
                                                 </label>)
                                         })}
@@ -232,13 +356,18 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                             <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
                         <div className="options-main">
+                            {(ratingFilter.length > 0) &&
+                                (<div className="clearall-main">
+                                    <div className="cros3">x</div>
+                                    <div className="clear-new" onClick={() => setratingFilter([])} ><span>Clear all</span></div>
+                                </div>)}
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {rating.map((range, i) => {
                                             if (!range) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" onChange={() => toggleSelection(range, setratingFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={ratingFilter.some(t => t.label === range.label)} onChange={() => toggleSelection(range, setratingFilter)} />
                                                     <div className="each2">{range.label}</div>
                                                 </label>)
                                         })}
@@ -286,11 +415,11 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 <div className="dot1">.</div>
                                 <div className="dot1">.</div>
                             </div>
-                        </div>                  
+                        </div>
 
                         <div className="price-select2">
                             <div className="min-container">
-                                <select className="min-select" value={priceFilter.min} onChange={(e)=>setpriceFilter(prev=>({...prev,min:e.target.value==="min"?0:parseInt(e.target.value)}))}>
+                                <select className="min-select" value={priceFilter.min} onChange={(e) => setpriceFilter(prev => ({ ...prev, min: e.target.value === "min" ? 0 : parseInt(e.target.value) }))}>
                                     <option className="op" value="min">Min</option>
                                     <option className="op" value="10000">₹10000</option>
                                     <option className="op" value="15000">₹15000</option>
@@ -300,7 +429,7 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                             </div>
                             <div className="to">to</div>
                             <div className="max-container">
-                                <select className="max-select" value={priceFilter.max} onChange={(e)=>setpriceFilter(prev=>({...prev,max:e.target.value==="Max"?Infinity:parseInt(e.target.value)}))}>
+                                <select className="max-select" value={priceFilter.max} onChange={(e) => setpriceFilter(prev => ({ ...prev, max: e.target.value === "Max" ? Infinity : parseInt(e.target.value) }))}>
                                     <option className="op" value="10000">₹10000</option>
                                     <option className="op" value="15000">₹15000</option>
                                     <option className="op" value="20000">₹20000</option>
@@ -323,53 +452,43 @@ export default Filter2
 
 
 
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                           
+            
+                                              
+                                                                   
+
+
+
+
+
+
+
+
+
+
+
+ 
+                                                                                      
+ 
+ 
+ 
+                                                                                                                                                                                                                                                                                 
+
+ 
    
-
-
-       
-
-
-  
-      
-
-         
-
-
-
-    
-   
-
-
-                  
-
-
-  
-   
-
-
-       
-
-
-
-
-
-
-
-                                                                                                                                                                                                             
-
-
-                        
-
-
-
-
-
-
-                                                           
-
-
-                                                                                                                                                                                        
-                                                                                                                                                
+ 
+                                                                                                       
+ 
+ 
+            
 
 
 
@@ -396,10 +515,48 @@ export default Filter2
 
 
 
-                   
-                     
 
-                                                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

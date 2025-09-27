@@ -1,11 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import flip from "./image2/flip.png"
 import icon from "./image2/icon.png"
 import Drop from "./Drop.jsx";
 import "./Flip2.css"
 
 function Header1() {
+  const [searchTerm,setSearchTerm]=useState("")
+  const [showDropdown,setshowDropdown]=useState(false)
+  const searchRef=useRef(null)
 
+  const products=[
+    {id:1,name:"iphone"},
+    {id:2,name:"Samsung"},
+    {id:3,name:"infinix"},
+    {id:4,name:"vivo"},
+
+  ];
+
+  const filteredproducts=searchTerm ? products.filter((p)=>p.name.toLowerCase().includes(searchTerm.toLowerCase())):products
+
+  useEffect(()=>{
+    function handleclickOutside(e){
+      if(searchRef.current && !searchRef.current.contains(e.target)){
+        setshowDropdown(false)
+      }
+    }
+    document.addEventListener("mousedown",handleclickOutside)
+    return()=>document.removeEventListener("mousedown",handleclickOutside)
+  },[])
   return (
     <>
       <div className="header-container2">
@@ -26,20 +48,44 @@ function Header1() {
           </div>
 
           {/* SEARCH BAR */}
-          <div className="searchbar-container2">
+          <div className="searchbar-container2"ref={searchRef}>
             <div className="searchbar2">
               <div className="search-sec">
                 <div className="search-holder">
                   <div className="search-holder2">
-                    <input type="search" className="searchinput2" placeholder="Search for products, brands and more" />
+                    <input type="search" className="searchinput2" placeholder="Search for products, brands and more" value={searchTerm} onChange={(e)=>{
+                      setSearchTerm(e.target.value)
+                      setshowDropdown(true)
+                    }}
+                    onFocus={()=>setshowDropdown(true)}/>
                   </div>
                 </div>
                 <button className="searchbtn2">
                   <svg width="20" height="20" viewBox="0 0 17 18" class="" xmlns="http://www.w3.org/2000/svg"><g fill="#2874F1" fill-rule="evenodd"><path class="EwE-Fa" d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203"></path><path class="EwE-Fa" d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path></g></svg>
                 </button>
               </div>
-            </div>
-          </div>        
+              {showDropdown  && (
+              <div className="search-dropdown">
+                {filteredproducts.length > 0 ? (
+                  filteredproducts.map((item) => (
+                    <div
+                      key={item.id}
+                      className="search-item"
+                      onClick={() => {
+                        setSearchTerm(item.name);
+                        setshowDropdown(false);
+                      }}
+                    >
+                      {item.name}           
+                    </div>
+                  ))
+                ) : (
+                  <div className="search-item">No results found</div>
+                )}
+              </div>
+            )}
+            </div>                          
+          </div>  
           {/*LOGIN*/}
           <div className="login-container2">
             <div className="login-bar2">
@@ -234,6 +280,7 @@ function Header1() {
   );
 }
 export default Header1;
+   
 
 
 
@@ -250,12 +297,23 @@ export default Header1;
 
 
 
+    
+                                                                                                                                                       
 
 
 
 
 
 
+ 
+                                                                                                                                                                         
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+                                                             
 
 
 
