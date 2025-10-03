@@ -25,7 +25,9 @@ function Product2({ products }) {
         })
         setproductList(sorted)
         setactivesort("high")
-    }
+    } 
+     
+    
 
     const newest = (id) => {
         const filtered = [...productList].sort((a, b) => a.id - b.id)

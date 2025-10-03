@@ -6,6 +6,8 @@ import Hon from "./Components2/Hon";
 import Footer from "./Components/Footer";
 
 import "./Components2/Flip2.css";
+import Header2 from "./Components2/Header2";
+import PhoneAd from "./Components2/PhoneAd";
 
 function MobileNext() {
   const [products, setproduct] = useState([]);
@@ -29,8 +31,19 @@ function MobileNext() {
   const [ratingFilter, setratingFilter] = useState([])
   const [priceFilter, setpriceFilter] = useState({ min: 0, max: Infinity })
 
+
+const [ismobile,setismobile]=useState(window.innerWidth<=1024)
+
+useEffect(()=>{
+  const handleresize=()=>setismobile(window.innerWidth<=1024)
+  window.addEventListener("resize",handleresize)
+
+  return()=>window.removeEventListener("resize",handleresize)
+},[])
+
+
   useEffect(() => {
-    fetch("/Apple.json")
+    fetch("/Apple.json")                              
       .then((res) => res.json())
       .then((data) => {
         setproduct(data);
@@ -115,7 +128,17 @@ function MobileNext() {
     return matchRam && matchInternal && brandmatch && matchScreen && matchbattery && matchdiscount && matchprimary && matchsecondary && matchrating && price >= priceFilter.min && price <= priceFilter.max;
   });
   return (
-    <>                                                          
+    <>    
+    {ismobile ?(   
+      <div>
+        <Header2/>
+        <PhoneAd dataSource={"/Phonead.json"}/>
+          <div className="Products-container2">
+          <Product2 products={filteredProducts} />
+        </div>
+      </div> 
+      ):(                                                      
+         <div>                                                 
       <div><Header1/></div>
       <div className="body-container">           
         <div>                               
@@ -137,10 +160,186 @@ function MobileNext() {
           <Product2 products={filteredProducts} />
         </div>
       </div>
-      <Footer />      
+      <Footer />  
+      </div> 
+      )}   
+    
     </>
-  );
+  );  
 }
 
 export default MobileNext;
 
+ 
+                   
+ 
+ 
+                                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                           
+ 
+ 
+ 
+ 
+ 
+      
+
+
+
+
+
+                         
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+                                                                                          
+                        
+
+
+
+                                                  
+
+
+
+
+
+ 
+ 
+
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                                     
+                          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                           
+
+
+
+                                                     
+
+                                                               
+     
+     
+       

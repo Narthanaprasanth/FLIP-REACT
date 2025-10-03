@@ -1,31 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Flip2.css"
 function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBrandFilter, Screen, setScreenFilter, battery, setBatteryFilter, Discount, setDiscountFilter, Primary, setPrimaryFilter, Secondary, setSecondaryFilter, rating, setratingFilter, priceFilter, setpriceFilter, RamFilter, internalFilter, BrandFilter, ScreenFilter, BatteryFilter, DiscountFilter, primaryFilter, SecondaryFilter, ratingFilter }) {
-    const toggleSelection = (value, setFilter) => {
-        setFilter((prev) =>
-            prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
-        )
-    }
+    const toggleSelection = (item, setFilter) => {
+        setFilter(prev =>
+            prev.some(v => v.label === item.label)
+                ? prev.filter(v => v.label !== item.label)
+                : [...prev, item]
+        );
+    };
+
+const [showOptions, setShowOptions] = useState(false);
+const [showinternal,setinternal]=useState(false)
+const [showbrand,setshowbrand]=useState(true)
+const [showscreen,setscreen]=useState(false)
+const [showbattery,setbattery]=useState(false)
+const [showdiscount,setdiscount]=useState(true)
+const [showprimary,setprimary]=useState(false)
+const [showsecondary,setsecondary]=useState(false)
+const [showrating,setrating]=useState(false)
+
+const toggle=(c,setter)=>{
+    setter((prev)=>prev.includes(c)?prev.filter((item)=>item!=c):[...prev,c])
+}                    
     return (
         <>
             <div className="filter-container2">
-                <div className="Filter-inner2">
-                    <div className="Filter-container3">
-                        <div className="Filter-main2">    
+                <div className="Filter-inner2">                                  
+                    <div className="Filter-container3">                            
+                        <div className="Filter-main2">
 
                             <div className="Filter-txt2">
                                 <div className="Filter-txt3">
                                     <div className="Filter-txt4">
-                                        <span>Filters</span>                        
+                                        <span>Filters</span>                                               
                                     </div>
-                                    {(RamFilter.length > 0 ||
+                                    {(RamFilter.length > 0 ||                                                                    
                                         internalFilter.length > 0 ||
                                         BrandFilter.length > 0 ||
-                                        ScreenFilter.length > 0 ||
-                                        BatteryFilter.length > 0 ||
-                                        DiscountFilter.length > 0 ||                             
-                                        primaryFilter.length > 0 ||                     
-                                        SecondaryFilter.length > 0 ||                  
+                                        ScreenFilter.length > 0 ||                      
+                                        BatteryFilter.length > 0 ||       
+                                        DiscountFilter.length > 0 ||                                                            
+                                        primaryFilter.length > 0 ||
+                                        SecondaryFilter.length > 0 ||
                                         ratingFilter.length > 0) &&
                                         (<div className="clearall2" onClick={() => window.location.reload()}>
                                             <span >CLEAR ALL</span>
@@ -42,7 +58,7 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                     ))}
                                     {/*INTERNAL  */}
                                     {internalFilter.map((range, i) => (
-                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range.label, setInternalFilter)}>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range, setInternalFilter)}>
                                             <div className="cros2" >x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
@@ -57,56 +73,56 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                     ))}
                                     {/* SREEN FILTER */}
                                     {ScreenFilter.map((range, i) => (
-                                        <div key={i} className="grey-text2">
-                                            <div className="cros2" onClick={() => toggleSelection(range.label, setScreenFilter)}>x</div>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range, setScreenFilter)}>
+                                            <div className="cros2" >x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
                                     ))}
                                     {/* BATTERY CAPACITY */}
                                     {BatteryFilter.map((range, i) => (
-                                        <div key={i} className="grey-text2">
-                                            <div className="cros2" onClick={() => toggleSelection(range.label, setBatteryFilter)} >x</div>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range, setBatteryFilter)}>
+                                            <div className="cros2" >x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
                                     ))}
                                     {/* DISCOUNT */}
                                     {DiscountFilter.map((range, i) => (
-                                        <div key={i} className="grey-text2">
-                                            <div className="cros2" onClick={() => toggleSelection(range.label, setDiscountFilter)}>x</div>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range, setDiscountFilter)}>
+                                            <div className="cros2">x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
 
                                     ))}
                                     {/* PRIMARY CAMERA */}
                                     {primaryFilter.map((range, i) => (
-                                        <div key={i} className="grey-text2">
-                                            <div className="cros2" onClick={() => toggleSelection(range.label, setPrimaryFilter)}>x</div>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range, setPrimaryFilter)}>
+                                            <div className="cros2" >x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
                                     ))}
                                     {/* SECONDARY CAMERA */}
                                     {SecondaryFilter.map((range, i) => (
-                                        <div key={i} className="grey-text2">
-                                            <div className="cros2" onClick={() => toggleSelection(range.label, setSecondaryFilter)}>x</div>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range, setSecondaryFilter)}>
+                                            <div className="cros2" >x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
                                     ))}
                                     {/* CUSTOMER RATING */}
                                     {ratingFilter.map((range, i) => (
-                                        <div key={i} className="grey-text2">
-                                            <div className="cros2" onClick={() => toggleSelection(range.label, setratingFilter)}>x</div>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(range, setratingFilter)}>
+                                            <div className="cros2" >x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
-                                    ))}
+                                    ))}        
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>                                     
                     <div className="Category2-container">
                         <div className="category2">
                             <div className="Categories-text">
-                                <span>CATEGORIES</span>
-                            </div>
+                                <span>CATEGORIES</span> 
+                            </div>                   
                             <div className="text2">
                                 <div className="text3">
                                     <span><svg width="10" height="10" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="IZmjtf"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" class="P3pAQJ"></path></svg></span>
@@ -119,18 +135,19 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                     <a href="#">Mobiles</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>  
                     </div>
                     {/*RAM*/}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">RAM</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg  className={`ukzDZP rZzKt4 ${showOptions ? "rotated" : ""}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setShowOptions(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+
                         </div>
 
 
-
-                        <div className="options-main">
+                    {showOptions && 
+                    ( <div className="options-main">
                             {(RamFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -152,14 +169,16 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                    )}           
                     </div>
                     {/* INTERNAL STORAGE */}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">INTERNAL STORAGE</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setinternal((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
-                        <div className="options-main">
+                        {showinternal && (
+                            <div className="options-main">
                             {(internalFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -180,14 +199,17 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                        )}
+                        
                     </div>
                     {/* BRAND */}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">BRAND</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setshowbrand((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
-                        <div className="options-main">
+                        {showbrand && (
+                            <div className="options-main">
                             {(BrandFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -208,15 +230,17 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                        )}
+                        
                     </div>
                     {/* SCREEN SIZE */}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">SCREEN SIZE</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setscreen((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
-
-                        <div className="options-main">
+                        {showscreen && (
+                            <div className="options-main">
                             {(ScreenFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -236,15 +260,17 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                        )}
+                        
                     </div>
                     {/* BATTERY CAPACITY */}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">BATTERY CAPACITY</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setbattery((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
-
-                        <div className="options-main">
+                        {showbattery && (
+                            <div className="options-main">
                             {(BatteryFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -264,16 +290,18 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                        )}
+                        
                     </div>
                     {/* DISCOUNT  */}
                     <div className="ram-container2">
 
                         <div className="ram-container3">
                             <div className="ram-main">DISCOUNT</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setdiscount((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
-
-                        <div className="options-main">
+                        {showdiscount && (
+                            <div className="options-main">
                             {(DiscountFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -293,15 +321,17 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                        )}
+                        
                     </div>
                     {/* PRIMARY CAMERA */}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">PRIMARY CAMERA</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setprimary((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
-
-                        <div className="options-main">
+                        {showprimary && (
+                            <div className="options-main">
                             {(primaryFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -321,14 +351,17 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                        )}
+                        
                     </div>
                     {/* SECONDARY CAMERA */}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">SECONDARY CAMERA</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setsecondary((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
-                        <div className="options-main">
+                        {showsecondary && (
+                            <div className="options-main">
                             {(SecondaryFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -348,14 +381,17 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                        )}
+                        
                     </div>
                     {/*CUSTOMER RATINGS */}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">CUSTOMER RATING</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setrating((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
-                        <div className="options-main">
+                        {showrating && (
+                             <div className="options-main">
                             {(ratingFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
@@ -375,13 +411,14 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 </div>
                             </div>
                         </div>
+                        )}
+                       
                     </div>
 
                     {/* PRICE*/}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">PRICE</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4"><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
                         </div>
                         <div className="price-range2">
                             <div className="price-range2">
@@ -390,7 +427,6 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                                 <div className="range1"></div>
                                 <div className="range1"></div>
                                 <div className="range1"></div>
-
                             </div>
                         </div>
                         <div className="trach-container1">
@@ -440,128 +476,13 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>                          
         </>
     )
 }
 export default Filter2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                                                                                                                           
-            
-                                              
-                                                                   
-
-
-
-
-
-
-
-
-
-
-
  
-                                                                                      
- 
- 
- 
-                                                                                                                                                                                                                                                                                 
 
- 
-   
- 
-                                                                                                       
- 
- 
-            
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                       

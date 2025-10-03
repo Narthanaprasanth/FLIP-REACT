@@ -21,10 +21,8 @@ function Drop(){
                 <a href="#">iPhone SE</a>
                 <a href="#"> Motorola rarzr</a>
                 <a href="#">realme Nazro 10 A</a>
-                <a href="#">Motorola g8 power lite</a>
-
-               
-            </div>
+                <a href="#">Motorola g8 power lite</a>                                                    
+            </div>                   
             <div className="drop-inside-2">
                 <h2>Mobile Accessories</h2>
                 <a href="#">Mobile Cases</a>
