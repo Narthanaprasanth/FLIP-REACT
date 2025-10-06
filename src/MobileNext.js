@@ -34,6 +34,8 @@ function MobileNext() {
 
 const [ismobile,setismobile]=useState(window.innerWidth<=1024)
 
+const [filtertype,setfiltertype]=useState("popularity")
+
 useEffect(()=>{
   const handleresize=()=>setismobile(window.innerWidth<=1024)
   window.addEventListener("resize",handleresize)
@@ -131,10 +133,10 @@ useEffect(()=>{
     <>    
     {ismobile ?(   
       <div>
-        <Header2/>
+        <Header2 filtertype={filtertype} onfilterchange={setfiltertype}/>
         <PhoneAd dataSource={"/Phonead.json"}/>
           <div className="Products-container2">
-          <Product2 products={filteredProducts} />
+          <Product2 products={filteredProducts} externalfilter={filtertype} />
         </div>
       </div> 
       ):(                                                      
@@ -163,7 +165,7 @@ useEffect(()=>{
       <Footer />  
       </div> 
       )}   
-    
+        
     </>
   );  
 }
