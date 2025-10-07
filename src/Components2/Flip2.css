@@ -2614,6 +2614,7 @@ body {
     padding-bottom: 12px;
     padding-left: 16px;
     padding-right: 8px;
+
 }
 .brand-filternew span{
     width: 100%;
@@ -2622,15 +2623,78 @@ body {
     text-overflow: ellipsis;
     margin-right: 8px;
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    color: black;
+
     font-size: 14px;
     flex: 1 1 0%;
 }
-}          
+.filter-both3{
+    display: flex;
+    flex-direction: row;
+}
+.filter-right1{
+    transform: translate(341.333px);
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 682.667px;
+    background-color: white;
+}
+.filter-right2{
+    height: 704px;
+    display: flex;
+    flex-direction: column;
+}
+.filter-search2{
+    padding: 13px 12px;
+    margin: 8px 16px;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(233, 233, 233);
+    box-sizing: border-box;
+
+}
+.filter-sign2{
+    display: flex;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+.filter-search2 input{
+    text-decoration: none;
+    border-style: none;
+    color: #5c5a5a;
+    letter-spacing: normal;
+    font-size: 11px;
+    font-family: Roboto,Arial,sans-serif;
+}
+.lab{
+    display: flex;
+    padding: 12px 19px;
+}
+.inp{
+    display: flex;
+    position: relative;
+    margin-right: 19px;
+    width: 18px;
+    height: 18px;
+    accent-color: blue;
+}
+
+}    
+        
            
                                                                                                             
 
          
 
+      
+
+
+
+ 
                                      
 

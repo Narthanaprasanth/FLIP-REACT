@@ -143,7 +143,7 @@ const toggle=(c,setter)=>{
                             <div className="ram-main">RAM</div>
                             <svg  className={`ukzDZP rZzKt4 ${showOptions ? "rotated" : ""}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setShowOptions(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
 
-                        </div>
+                        </div>     
 
 
                     {showOptions && 

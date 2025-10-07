@@ -1,7 +1,32 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import "./Flip2.css"
+ import search from "./image2/search.png"
 function Filter(){
-    const [active, setActive] = useState(null);
+    const [active, setActive] = useState(0);
+    const [product,setproduct]=useState([])
+    const [Ram,setRam]=useState([])
+    const [showRam,setShowRam]=useState(false)
+    
+
+    const hanldefilter=(item,index)=>{
+      setActive(index)
+      if(item==="RAM"){
+        setShowRam(true)
+      }else{
+        setShowRam(false)
+      }
+    }
+
+    useEffect(()=>{
+      fetch("/Apple.json")
+      .then((res)=>res.json())
+      .then((data)=>{
+        setproduct(data)
+
+        const uniqueRam=[...new Set(data.map((p)=>p.RAMcheck))]
+        setRam(uniqueRam)
+      })
+    })
 
   const filters = [
     "Brand",
@@ -41,7 +66,7 @@ function Filter(){
                     <div className="brand-filter2" key={index}>
                       <div
                         className="brand-filternew"
-                        onClick={() => setActive(index)}
+                        onClick={() => hanldefilter(item,index)}
                         style={{
                           cursor: "pointer",
                           color: active === index ? "blue" : "black",
@@ -54,15 +79,40 @@ function Filter(){
                           display: "flex",
                           justifyContent: "space-between",
                           alignItems: "center",
-                        }}
-                      >
-                        <span>{item}</span>
+                        }}    
+                      >                              
+                        <span>{item}</span>      
                         <p></p>
                       </div>
                     </div>
-                  ))}
+                  ))}                
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="filter-right1">
+            <div className="filter-right2">
+              {active===filters.indexOf("Brand")&&(
+                 <div className="filter-search2">
+                 <div className="filter-sign2">
+                  <img src={search} alt="" />
+                 </div>
+                 <input type="text"placeholder="Search Brand" />
+              </div>
+              )}
+             
+              {showRam && (
+               
+                <div className="ram-option">
+                  {Ram.map((r,i)=>{
+                    if(!r) return null
+                     return(
+                    <label className="lab" key={i}><input className="inp" type="checkbox"/>
+                    <div className="ram-innerfilter">{r}</div>
+                    </label>)}
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -75,5 +125,3 @@ export default Filter
 
  
  
-
-                                                    
