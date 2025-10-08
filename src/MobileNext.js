@@ -4,7 +4,6 @@ import Filter2 from "./Components2/Filter2";
 import Product2 from "./Components2/Product2";
 import Hon from "./Components2/Hon";
 import Footer from "./Components/Footer";
-
 import "./Components2/Flip2.css";
 import Header2 from "./Components2/Header2";
 import PhoneAd from "./Components2/PhoneAd";
@@ -143,7 +142,7 @@ useEffect(()=>{
          <div>                                                 
       <div><Header1/></div>
       <div className="body-container">           
-        <div>                               
+        <div>                                      
           <Filter2                                                  
             Ram={Ram} setRamFilter={setRamFilter} RamFilter={RamFilter}
             internal={internal} setInternalFilter={setInternalFilter} internalFilter={internalFilter}

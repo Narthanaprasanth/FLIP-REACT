@@ -1,14 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import wow from "./image2/wow.png"
 import arrow from "./image2/arrow.png"
 import time from "./image2/time.png"
+import { FilterContext } from "./FilterContext";
 function Product2({ products,externalfilter }) {
     const [productList, setproductList] = useState(products)
     const [activesort, setactivesort] = useState("popularity")
+    const { filteredProducts, setFilteredProducts } = useContext(FilterContext);
+
 
     useEffect(() => {
-        setproductList(products)
+    setproductList(filteredProducts); 
+  }, [filteredProducts],);
+
+    useEffect(() => {
+        setproductList(filteredProducts)
     }, [products])
+
+        useEffect(() => {
+            if(window.innerWidth>1024){
+                setproductList(products)
+            }
+    }, [products])
+    
     useEffect(()=>{
         setactivesort(externalfilter)
         switch(externalfilter){
@@ -16,7 +30,7 @@ function Product2({ products,externalfilter }) {
                 popularity()
                 break
             case "low":
-                sortpricebylowprice()
+                sortpricebylowprice()   
                 break
             case "high":
                 sortpricebyhighprice()
@@ -168,7 +182,7 @@ function Product2({ products,externalfilter }) {
 
 
                                                     </div>)}
-
+                                                              
 
                                                 <div className="main-data">
                                                     <ul className="main-data1">
@@ -373,21 +387,9 @@ function Product2({ products,externalfilter }) {
 export default Product2
 
 
-  
-
-
-   
+      
 
 
 
-
-
-
-
-
-
-
-
-
-
+                       
 

@@ -1610,16 +1610,22 @@ body {
 .heart-5 {
     display: none;
 }
+.custom-divider{
+    display: none;
+}
 
 @media screen and (max-width:1024px) {
     body{
         background-color: white;
     }
+    .custom-divider{
+        display: block;
+    }
     .header-main1 {
         position: absolute;
         top: 0px;
         left: 0px;
-        right: 0px;
+        right: 0px;    
         height: 52px;
         overflow: hidden;
         align-items: stretch;
@@ -2535,7 +2541,7 @@ body {
 }
 .filter-both1{
     padding-top: 52px;
-    padding-bottom: 56px;
+
 }
 .filter-both2{
     display: flex;
@@ -2683,8 +2689,57 @@ body {
     height: 18px;
     accent-color: blue;
 }
+.bottom-apply{
+    background-color: white;
+    position: absolute;
+    height: 56px;
+    width: 100%;
 
-}    
+}
+.bottom-apply1{
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 16px;
+    margin-right: 8px;
+    align-items: center;
+}
+.total-products{
+    width: 100%;
+}
+.total-number{
+    font-size: 16px;
+    color: black;
+    font-family: Roboto Medium, Roboto-Medium, Droid Sans, HelveticaNeue-Medium, Helvetica Neue Medium, sans-serif-medium;
+    line-height: 19px;
+    width: 100%;
+}
+.total2{
+    color: rgb(135, 135, 135);
+    font-size: 12px;
+    font-family: Roboto Medium, Roboto-Medium, Droid Sans, HelveticaNeue-Medium, Helvetica Neue Medium, sans-serif-medium;
+}
+.apply-box{
+    padding-left: 65px;
+    padding-right: 65px;
+    min-height: 40px;
+    color: rgb(255, 255, 255);
+    font-family: Roboto Medium, Roboto-Medium, Droid Sans, HelveticaNeue-Medium, Helvetica Neue Medium, sans-serif-medium;
+    background-color: rgb(255, 88, 0);
+    border-radius: 2px;
+    font-size: 14px;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+}
+
         
            
                                                                                                             
@@ -2694,7 +2749,14 @@ body {
       
 
 
-
+@media screen and (max-width:425px){
+      .filter-right1 {
+    transform: translate(141.333px);
+      }
+      .filter-search2{
+        width: fit-content;
+      }
+}
  
                                      
 

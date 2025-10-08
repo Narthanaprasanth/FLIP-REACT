@@ -9,6 +9,16 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
         );
     };
 
+    const toggleSelection2 = (item, setFilter) => {
+  setFilter(prev =>
+    prev.includes(item)  
+      ? prev.filter(v => v !== item) 
+      : [...prev, item]      
+  );
+}; 
+ 
+
+
 const [showOptions, setShowOptions] = useState(false);
 const [showinternal,setinternal]=useState(false)
 const [showbrand,setshowbrand]=useState(true)
@@ -17,7 +27,7 @@ const [showbattery,setbattery]=useState(false)
 const [showdiscount,setdiscount]=useState(true)
 const [showprimary,setprimary]=useState(false)
 const [showsecondary,setsecondary]=useState(false)
-const [showrating,setrating]=useState(false)
+const [showrating,setrating]=useState(false)   
 
 const toggle=(c,setter)=>{
     setter((prev)=>prev.includes(c)?prev.filter((item)=>item!=c):[...prev,c])
@@ -51,7 +61,7 @@ const toggle=(c,setter)=>{
                                 <div className="grey-text">
                                     {/* RAM */}
                                     {RamFilter.map((c, i) => (
-                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(c, setRamFilter)}>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection2(c, setRamFilter)}>
                                             <div className="cros2" >x</div>
                                             <div className="text-display">{c}</div>
                                         </div>
@@ -66,7 +76,7 @@ const toggle=(c,setter)=>{
                                     ))}
                                     {/* Brand */}
                                     {BrandFilter.map((b, i) => (
-                                        <div key={i} className="grey-text2" onClick={() => toggleSelection(b, setBrandFilter)}>
+                                        <div key={i} className="grey-text2" onClick={() => toggleSelection2(b, setBrandFilter)}>
                                             <div className="cros2" >x</div>
                                             <div className="text-display">{b}</div>
                                         </div>
@@ -113,9 +123,9 @@ const toggle=(c,setter)=>{
                                             <div className="cros2" >x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
-                                    ))}        
+                                    ))}            
                                 </div>
-                            </div>
+                            </div>                  
                         </div>
                     </div>                                     
                     <div className="Category2-container">
@@ -142,34 +152,29 @@ const toggle=(c,setter)=>{
                         <div className="ram-container3">
                             <div className="ram-main">RAM</div>
                             <svg  className={`ukzDZP rZzKt4 ${showOptions ? "rotated" : ""}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setShowOptions(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
-
-                        </div>     
-
-
+                        </div>
                     {showOptions && 
                     ( <div className="options-main">
                             {(RamFilter.length > 0) &&
                                 (<div className="clearall-main">
                                     <div className="cros3">x</div>
                                     <div className="clear-new" onClick={() => setRamFilter([])} ><span>Clear all</span></div>
-                                </div>)}
-
+                                </div>)}                         
                             <div className="option-main2">
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {Ram.map((c, i) => {
                                             if (!c) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" checked={RamFilter.includes(c)} onChange={() => toggleSelection(c, setRamFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={RamFilter.includes(c)} onChange={() => toggleSelection2(c, setRamFilter)} />
                                                     <div className="each2">{c}</div>
                                                 </label>)
                                         })}
-
-                                    </div>
+                                    </div>   
                                 </div>
-                            </div>
+                            </div>          
                         </div>
-                    )}           
+                    )}                     
                     </div>
                     {/* INTERNAL STORAGE */}
                     <div className="ram-container2">
@@ -221,7 +226,7 @@ const toggle=(c,setter)=>{
                                         {Brand.map((b, i) => {
                                             if (!b) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" checked={BrandFilter.includes(b)} onChange={() => toggleSelection(b, setBrandFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={BrandFilter.includes(b)} onChange={() => toggleSelection2(b, setBrandFilter)} />
                                                     <div className="each2">{b}</div>
 
                                                 </label>)
@@ -482,6 +487,7 @@ const toggle=(c,setter)=>{
 }
 export default Filter2
  
+                                                                                   
 
 
 
