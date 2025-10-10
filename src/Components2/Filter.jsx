@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function Filter() {
   const { applyFilters } = useContext(FilterContext);
+  
 
   const {
     filteredProducts,
@@ -56,6 +57,8 @@ function Filter() {
   const [showrating, setrating] = useState(null)
   const [showPrice, setShowPrice] = useState(null);
 
+  const [show,setshow]=useState(false)
+
 
   const filters = [
     "Brand",
@@ -85,6 +88,9 @@ function Filter() {
 
 
   }
+  const clearclick=()=>{
+    setshow(true)
+  }
   return (
     <>
       <div className="filter-section3">
@@ -95,7 +101,7 @@ function Filter() {
           <div className="filter-heading">
             <div className="filter-heading3">
               <div className="filter-name"> <h2>Filters</h2></div>
-              <div className="clear-filters">Clear Filters</div>
+              <div className="clear-filters"onClick={clearclick} >Clear Filters</div>
             </div>
           </div>
         </div>
@@ -493,6 +499,72 @@ function Filter() {
           }}><span>Apply</span></div>
         </div>
       </div>
+      {show && (
+      <div className="clear-pop">
+        <div className="clear-pop1">
+          <div className="clear-cross"><svg width="15" height="15" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg"><path d="M1.054 1l10.543 10.65m.054-10.596L1 11.597" stroke="#414141" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg></div>
+          <div className="clear-pop2">
+            Clear Filters
+          </div>
+        </div>
+        <div className="shadow-line">
+          <img src="https://rukminim1.flixcart.com/www/30/10/promos/01/08/2018/e364d9fe-1225-4814-bfee-2c461bf1c442.png?q=90" alt="" />
+        </div>
+
+  <div className="clearing-box">
+          <div className="title-clear">
+            <div className="title-clear1">Clear Filters</div>
+            <div className="title-clear2">would you like to clear following filters?</div>
+          </div>
+          {RamFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />RAM</label>
+          )}
+
+          {BrandFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Brand</label>
+          )}
+          {internalFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Internal Storage</label>
+          )}
+          {ScreenFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Screen Size</label>
+          )}
+          {BatteryFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Battery Capacity</label>
+          )}
+          {DiscountFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Discount</label>
+          )}
+          {primaryFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Primary Camera</label>
+          )}
+          {SecondaryFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Secondary Camera</label>
+          )}
+          {ratingFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Customer Rating</label>
+          )}
+          {DiscountFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Discount</label>
+          )}
+          {priceFilter.length > 0 && (
+            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Price</label>
+          )}
+         
+             <div className="cancel-clear2">
+            <div className="cancel3">Cancel</div>
+            <div className="apply77">Clear</div>
+          </div>
+          
+         
+          
+        </div>
+
+
+        
+      </div>
+      )}
+
     </>
   );
 }

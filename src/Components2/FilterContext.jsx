@@ -125,7 +125,7 @@ const applyFilters = () => {
 
     const screenMatch =
       ScreenFilter.length === 0 ||
-      ScreenFilter.some(
+      ScreenFilter.some(                        
         (range) =>
           parseFloat(p.Screensize) >= range.min &&
           parseFloat(p.Screensize) <= range.max
@@ -133,8 +133,8 @@ const applyFilters = () => {
 
     const batteryMatch =
       BatteryFilter.length === 0 ||
-      BatteryFilter.some(
-        (range) =>
+      BatteryFilter.some(                                                                                
+        (range) =>                                         
           parseFloat(p.batterycheck) >= range.min &&
           parseFloat(p.batterycheck) <= range.max
       );
@@ -147,7 +147,7 @@ const applyFilters = () => {
           parseFloat(p.discount) <= range.max
       );
 
-    const primaryMatch =
+    const primaryMatch =                   
       primaryFilter.length === 0 ||
       primaryFilter.some(
         (range) =>
@@ -286,4 +286,5 @@ setpriceFilter,
 
 
 
- 
+                                                                                         
+                                                                                                                                                                                                                                                                                                                                                      

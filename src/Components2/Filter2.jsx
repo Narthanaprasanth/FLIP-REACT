@@ -171,7 +171,7 @@ const toggle=(c,setter)=>{
                                                 </label>)
                                         })}
                                     </div>   
-                                </div>
+                                </div> 
                             </div>          
                         </div>
                     )}                     

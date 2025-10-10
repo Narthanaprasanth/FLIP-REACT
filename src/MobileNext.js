@@ -96,7 +96,7 @@ useEffect(()=>{
   }, []);
 
   // FILTERING LOGIC
-  const filteredProducts = products.filter((p) => {
+  const filteredProducts = products.filter((p) => {                          
     const matchRam =
       RamFilter.length === 0 || RamFilter.includes(p.RAMcheck);
 
@@ -128,21 +128,21 @@ useEffect(()=>{
 
     return matchRam && matchInternal && brandmatch && matchScreen && matchbattery && matchdiscount && matchprimary && matchsecondary && matchrating && price >= priceFilter.min && price <= priceFilter.max;
   });
-  return (
+  return (                          
     <>    
     {ismobile ?(   
       <div>
         <Header2 filtertype={filtertype} onfilterchange={setfiltertype}/>
         <PhoneAd dataSource={"/Phonead.json"}/>
           <div className="Products-container2">
-          <Product2 products={filteredProducts} externalfilter={filtertype} />
-        </div>
+          <Product2 products={filteredProducts} externalfilter={filtertype} />                                                                                              
+        </div>                                                                                                                       
       </div> 
       ):(                                                      
          <div>                                                 
       <div><Header1/></div>
       <div className="body-container">           
-        <div>                                      
+        <div>                                                                                               
           <Filter2                                                  
             Ram={Ram} setRamFilter={setRamFilter} RamFilter={RamFilter}
             internal={internal} setInternalFilter={setInternalFilter} internalFilter={internalFilter}
