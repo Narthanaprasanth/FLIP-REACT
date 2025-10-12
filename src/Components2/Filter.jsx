@@ -1,16 +1,14 @@
 // src/Components2/Filter.jsx
 import React, { useState, useContext } from "react";
 import { FilterContext } from "./FilterContext";
-import Product2 from "./Product2";
 import search from "./image2/search.png"
 import { useNavigate } from "react-router-dom";
 
 function Filter() {
   const { applyFilters } = useContext(FilterContext);
-  
+
 
   const {
-    filteredProducts,
     Ram,
     RamFilter,
     setRamFilter,
@@ -27,7 +25,7 @@ function Filter() {
     BatteryFilter,
     setBatteryFilter,
     Discount,
-    DiscountFilter,
+    DiscountFilter,                         
     setDiscountFilter,
     Primary,
     primaryFilter,
@@ -57,7 +55,7 @@ function Filter() {
   const [showrating, setrating] = useState(null)
   const [showPrice, setShowPrice] = useState(null);
 
-  const [show,setshow]=useState(false)
+  const [show, setshow] = useState(false)
 
 
   const filters = [
@@ -88,20 +86,47 @@ function Filter() {
 
 
   }
-  const clearclick=()=>{
+
+  const [selectedClearFilters, setSelectedClearFilters] = useState([])
+const crossclick=()=>{
+  setshow(false)
+}
+  const clearclick = () => {
     setshow(true)
   }
+  const svgnavigate=()=>{
+    navigate(-1)
+  }
+  const clearfilter = () => {
+
+    if (selectedClearFilters.includes("RAM")) setRamFilter([])
+    if (selectedClearFilters.includes("Brand")) setBrandFilter([])
+    if (selectedClearFilters.includes("Internal Storage")) setInternalFilter([])
+    if (selectedClearFilters.includes("Screen Size")) setScreenFilter([])
+    if (selectedClearFilters.includes("Battery Capacity")) setBatteryFilter([])
+    if (selectedClearFilters.includes("Primary Camera")) setPrimaryFilter([])
+    if (selectedClearFilters.includes("Secondary Camera")) setSecondaryFilter([])
+      if(selectedClearFilters.includes("Customer Rating")) setratingFilter([])
+        if(selectedClearFilters.includes("Discount"))setDiscountFilter([])
+          if(selectedClearFilters.includes("Price"))setpriceFilter([])
+
+  // Hide the popup
+  setshow(false)
+  };
+
+                                          
+                                                                                             
   return (
     <>
       <div className="filter-section3">
         <div className="filter-section4">
-          <div className="arrow-filter">
+          <div className="arrow-filter" onClick={svgnavigate}>
             <svg width="19" height="16" viewBox="0 0 19 16" xmlns="http:www.w3.org/2000/svg"><path d="M17.556 7.847H1M7.45 1L1 7.877l6.45 6.817" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
           </div>
           <div className="filter-heading">
             <div className="filter-heading3">
               <div className="filter-name"> <h2>Filters</h2></div>
-              <div className="clear-filters"onClick={clearclick} >Clear Filters</div>
+              <div className="clear-filters" onClick={clearclick} >Clear Filters</div>
             </div>
           </div>
         </div>
@@ -153,6 +178,7 @@ function Filter() {
                 )}
 
 
+ 
 
                 {showRam && (
                   <div className="ram-option">
@@ -500,69 +526,168 @@ function Filter() {
         </div>
       </div>
       {show && (
-      <div className="clear-pop">
-        <div className="clear-pop1">
-          <div className="clear-cross"><svg width="15" height="15" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg"><path d="M1.054 1l10.543 10.65m.054-10.596L1 11.597" stroke="#414141" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg></div>
-          <div className="clear-pop2">
-            Clear Filters
+        <div className="clear-pop">
+          <div className="clear-pop1">
+            <div className="clear-cross" onClick={crossclick}><svg width="15" height="15" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg"><path d="M1.054 1l10.543 10.65m.054-10.596L1 11.597" stroke="#414141" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg></div>
+            <div className="clear-pop2">
+              Clear Filters
+            </div>
           </div>
-        </div>
-        <div className="shadow-line">
-          <img src="https://rukminim1.flixcart.com/www/30/10/promos/01/08/2018/e364d9fe-1225-4814-bfee-2c461bf1c442.png?q=90" alt="" />
-        </div>
-
-  <div className="clearing-box">
-          <div className="title-clear">
-            <div className="title-clear1">Clear Filters</div>
-            <div className="title-clear2">would you like to clear following filters?</div>
+          <div className="shadow-line">
+            <img src="https://rukminim1.flixcart.com/www/30/10/promos/01/08/2018/e364d9fe-1225-4814-bfee-2c461bf1c442.png?q=90" alt="" />
           </div>
-          {RamFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />RAM</label>
-          )}
 
-          {BrandFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Brand</label>
-          )}
-          {internalFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Internal Storage</label>
-          )}
-          {ScreenFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Screen Size</label>
-          )}
-          {BatteryFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Battery Capacity</label>
-          )}
-          {DiscountFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Discount</label>
-          )}
-          {primaryFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Primary Camera</label>
-          )}
-          {SecondaryFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Secondary Camera</label>
-          )}
-          {ratingFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Customer Rating</label>
-          )}
-          {DiscountFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Discount</label>
-          )}
-          {priceFilter.length > 0 && (
-            <label className="label-filter"> <input className="check2" type="checkbox" defaultChecked />Price</label>
-          )}
-         
-             <div className="cancel-clear2">
-            <div className="cancel3">Cancel</div>
-            <div className="apply77">Clear</div>
+          <div className="clearing-box">
+            <div className="title-clear">
+              <div className="title-clear1">Clear Filters</div>
+              <div className="title-clear2">would you like to clear following filters?</div>
+            </div>
+
+
+
+            {RamFilter.length > 0 && (
+              <label className="label-filter">
+                <input className="check2"
+                  type="checkbox"
+                  checked={selectedClearFilters.includes("RAM")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("RAM")
+                        ? prev.filter((f) => f !== "RAM")
+                        : [...prev, "RAM"]
+                    )
+                  } />RAM</label>
+            )}
+
+
+
+            {BrandFilter.length > 0 && (
+              <label className="label-filter">
+                <input className="check2"
+                  type="checkbox"
+                  checked={selectedClearFilters.includes("Brand")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Brand")
+                        ? prev.filter((f) => f !== "Brand") :
+                        [...prev, "Brand"])
+
+                  } />Brand</label>
+            )}
+
+
+            {internalFilter.length > 0 && (
+              <label className="label-filter">
+                <input className="check2"
+                  type="checkbox"
+                  checked={selectedClearFilters.includes("Internal Storage")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Internal Storage") ?
+                        prev.filter((f) => f !== "Internal Storage") :
+                        [...prev, "Internal Storage"]
+                    )
+                  } />Internal Storage</label>
+            )}
+
+
+            {ScreenFilter.length > 0 && (
+              <label className="label-filter">
+                <input className="check2" type="checkbox"
+                  checked={selectedClearFilters.includes("Screen Size")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Screen Size") ?
+                        prev.filter((f) => f !== "Screen Size") :
+                        [...prev, "Screen Size"]
+                    )
+                  } />Screen Size</label>
+            )}
+            {BatteryFilter.length > 0 && (
+              <label className="label-filter">
+                <input className="check2"
+                  type="checkbox"
+                  checked={selectedClearFilters.includes("Battery Capacity")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Battery Capacity") ?
+                        prev.filter((f) => f !== "Battery Capacity") :
+                        [...prev, "Battery Capacity"]
+                    )
+                  } />Battery Capacity</label>
+            )}
+            {primaryFilter.length > 0 && (
+              <label className="label-filter">
+                <input className="check2" type="checkbox"
+                  checked={selectedClearFilters.includes("Primary Camera")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Primary Camera") ?
+                        prev.filter((f) => f !== "Primary Camera") :
+                        [...prev, "Primary Camera"]
+                    )
+                  }
+
+                />Primary Camera</label>
+            )}
+            {SecondaryFilter.length > 0 && (
+              <label className="label-filter">
+                <input className="check2"
+                  type="checkbox"
+                  checked={selectedClearFilters.includes("Secondary Camera")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Secondary Camera") ?
+                        prev.filter((f) => f !== "Secondary Camera") :
+                        [...prev, "Secondary Camera"]
+
+                    )
+                  }
+                />Secondary Camera</label>
+            )}
+            {ratingFilter.length > 0 && (
+              <label className="label-filter"> 
+              <input className="check2" 
+              type="checkbox" 
+              checked={selectedClearFilters.includes("Customer Rating")}  onChange={()=>
+                setSelectedClearFilters((prev)=>
+                prev.includes("Customer Rating")?
+              prev.filter((f)=>f!=="Customer Rating"):
+              [...prev,"Customer Rating"]
+                )
+              }
+               />Customer Rating</label>
+            )}
+            {DiscountFilter.length > 0 && (
+              <label className="label-filter"> 
+              <input className="check2" 
+              type="checkbox" 
+              checked={selectedClearFilters.includes("Discount")} onChange={()=>
+                setSelectedClearFilters((prev)=>
+                prev.includes("Discount")?
+              prev.filter((f)=>f!=="Discount"):
+              [...prev,"Discount"]
+                )
+              } />Discount</label>
+            )}
+            {priceFilter.length > 0 && (
+              <label className="label-filter"> 
+              <input className="check2" 
+              type="checkbox" 
+              checked={selectedClearFilters.includes("Price")} onChange={()=>
+                setSelectedClearFilters((prev)=>
+                prev.includes("Price")?
+              prev.filter((f)=>f!=="Price"):
+              [...prev,"Price"]
+                )
+              } />Price</label>
+            )}
+
+            <div className="cancel-clear2">
+              <div className="cancel3">Cancel</div>
+              <div className="apply77" onClick={clearfilter}>Clear</div>
+            </div>
+
+
+
           </div>
-          
-         
-          
+
+
+
         </div>
-
-
-        
-      </div>
       )}
 
     </>
@@ -574,6 +699,82 @@ export default Filter;
 
 
 
+    
+                                  
+
+
+
+
+
+
+                                                                                        
+
+
+
+
+
+
+
+
+
+
+
+                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+
+                                                                                                                                                    
+
+
+
+
+
+
+
+
+ 
+
+              
+    
+      
+                                                              
+        
+
+
+
+   
+                                                                                                                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                    
 
 
 
@@ -594,6 +795,18 @@ export default Filter;
 
 
 
+                                                                             
+   
+                                                                                                  
+
+
+
+
+                                      
+
+
+
+                                                   
 
 
 
@@ -601,3 +814,18 @@ export default Filter;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                        
+
+                             

@@ -6,7 +6,7 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
             prev.some(v => v.label === item.label)
                 ? prev.filter(v => v.label !== item.label)
                 : [...prev, item]
-        );
+        );                                    
     };
 
     const toggleSelection2 = (item, setFilter) => {

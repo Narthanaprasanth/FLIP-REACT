@@ -36,7 +36,7 @@ function Header1() {
             </div>
             <div className="explore-txt">
               <div className="explore">
-                <a href="#">Explore</a>
+                <a href="#">Explore</a>                                                
                 <span>Plus</span>
                 <img src={icon} alt="" />
               </div>

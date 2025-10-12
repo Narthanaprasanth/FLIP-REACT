@@ -77,28 +77,28 @@ useEffect(()=>{
         const uniqueSecondary = [
           { label: "12 - 15.9 MP", min: 12, max: 15.9 },
           { label: "5 - 7.9", min: 5, max: 7.9 }
-        ]
+        ]                                                           
         const uniqueRating = [
           { label: "4★ & above", min: 4, max: Infinity },
           { label: "5★ & above", min: 5, max: Infinity }
         ]
-
-        setRam(uniqueRam)
-        setinternal(uniqueInternal)
-        setBrand(uniqueBrand)
-        setSreen(uniqueScreen)
-        setbattery(uniqueBattery)
-        setDiscount(uniqueDiscount)
-        setPrimary(uniquePrimary)
-        setSecondary(uniqueSecondary)
-        setrating(uniqueRating)
+                                                                                
+        setRam(uniqueRam)                                                                       
+        setinternal(uniqueInternal)                   
+        setBrand(uniqueBrand)                   
+        setSreen(uniqueScreen)               
+        setbattery(uniqueBattery)                                                                                           
+        setDiscount(uniqueDiscount)                        
+        setPrimary(uniquePrimary)                     
+        setSecondary(uniqueSecondary)                     
+        setrating(uniqueRating)                         
       });
   }, []);
 
   // FILTERING LOGIC
   const filteredProducts = products.filter((p) => {                          
-    const matchRam =
-      RamFilter.length === 0 || RamFilter.includes(p.RAMcheck);
+    const matchRam =                                             
+      RamFilter.length === 0 || RamFilter.includes(p.RAMcheck);                           
 
     const matchInternal =
       internalFilter.length === 0 || internalFilter.some((range) => p.Internalcheck >= range.min && p.Internalcheck <= range.max);

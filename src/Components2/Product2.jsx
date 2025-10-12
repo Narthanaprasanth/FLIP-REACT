@@ -139,7 +139,7 @@ function Product2({ products,externalfilter }) {
                                             <div className="compare2">
                                                 <div className="compare3">
                                                     <span className="compare3-span">
-                                                        <label> <input type="checkbox" /></label>
+                                                        <label> <input className="checkcolour" type="checkbox" /></label>
                                                     </span>
                                                     <label className="add"><span>Add to Compare</span></label>
 
@@ -251,7 +251,7 @@ function Product2({ products,externalfilter }) {
                                     </div>
                                 </div>
 
-                            </div>
+                            </div>                                                                                                                                                                                                                                                                                                                                                                                                  
                         </div>
                         {(index + 1) % 4 === 0 && (
                             <div className="custom-divider">
@@ -387,9 +387,45 @@ function Product2({ products,externalfilter }) {
 export default Product2
 
 
-      
 
 
 
-                       
 
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     
+
+
+
+
+     

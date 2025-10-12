@@ -31,7 +31,7 @@ const Trends = ({ dataSource, title }) => {
             setstartindex((prev) => prev + 2)
         }                              
     }
-    const showprev = () => {
+    const showprev = () => {  
         if (startIndex > 0) {
             setstartindex((prev) => prev - 2)
         }

@@ -33,7 +33,7 @@ function Header2({ filtertype, onfilterchange }) {
                         <a className="loign-a" href="#">
                             <span className="logn-sp">Login</span>
                         </a>
-                    </div>
+                    </div>                     
                 </div>
             </div>
             <div className="sort-filter1">
@@ -185,3 +185,21 @@ function Header2({ filtertype, onfilterchange }) {
 export default Header2
 
 
+                                       
+
+
+
+   
+            
+       
+                   
+                      
+                   
+
+
+
+
+
+                                                    
+
+                                                   

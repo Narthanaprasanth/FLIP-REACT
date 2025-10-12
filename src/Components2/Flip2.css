@@ -153,6 +153,9 @@ body {
 .login-bar2:hover .tri2 {
     display: block;
 }
+.checkcolour{
+    accent-color: blue;
+}
 
 .login-down {
     position: absolute;
@@ -2138,7 +2141,7 @@ body {
         overflow: hidden;
     }
 
-    .blue-box2 {
+    .blue-box2 {                                                  
         height: 44px;
         margin-bottom: 16px;  
         display: flex;
@@ -2150,7 +2153,6 @@ body {
                                                                       
     .bluebox1 {
         align-items: stretch;
-
     }
 
     .bluebox3 span {
@@ -2160,7 +2162,7 @@ body {
         font-size: 14px;
         font-weight: 400;
         margin-right: 16px;
-        margin-left: 18px;
+        margin-left: 18px;                         
     }
 
     .bluebox3 {
