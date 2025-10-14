@@ -129,8 +129,8 @@ const applyFilters = () => {
         (range) =>
           parseFloat(p.Screensize) >= range.min &&
           parseFloat(p.Screensize) <= range.max
-      );
-
+      );                                                                                                 
+                                                                                                                                                           
     const batteryMatch =
       BatteryFilter.length === 0 ||
       BatteryFilter.some(                                                                                

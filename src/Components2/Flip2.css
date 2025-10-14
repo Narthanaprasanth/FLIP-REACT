@@ -2869,7 +2869,29 @@ body {
     }
 }
 
+@media screen and (max-width:768px){
+    .filter-both1{
+        width: 100%;
+        overflow-x: hidden;
 
+    }
+  .brand-filter2{
+    width: 256px;
+  }
+  .filter-left1{
+    width: 256px;
+  }
+.filter-right1{
+    transform: translate(256px);
+}
+.filter-search2{
+    width: 480px;
+}
+.filter-right1{
+    width: max-content;
+}
+
+}
 
 @media screen and (max-width:425px) {
     .filter-right1 {

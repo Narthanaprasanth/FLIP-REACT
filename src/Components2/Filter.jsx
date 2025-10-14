@@ -17,7 +17,7 @@ function Filter() {
     setBrandFilter,
     internalFilter,
     setInternalFilter,
-    internal,
+    internal, 
     Screen,
     ScreenFilter,
     setScreenFilter,
@@ -25,7 +25,7 @@ function Filter() {
     BatteryFilter,
     setBatteryFilter,
     Discount,
-    DiscountFilter,                         
+    DiscountFilter,
     setDiscountFilter,
     Primary,
     primaryFilter,
@@ -88,13 +88,13 @@ function Filter() {
   }
 
   const [selectedClearFilters, setSelectedClearFilters] = useState([])
-const crossclick=()=>{
-  setshow(false)
-}
+  const crossclick = () => {
+    setshow(false)
+  }
   const clearclick = () => {
     setshow(true)
   }
-  const svgnavigate=()=>{
+  const svgnavigate = () => {
     navigate(-1)
   }
   const clearfilter = () => {
@@ -106,16 +106,16 @@ const crossclick=()=>{
     if (selectedClearFilters.includes("Battery Capacity")) setBatteryFilter([])
     if (selectedClearFilters.includes("Primary Camera")) setPrimaryFilter([])
     if (selectedClearFilters.includes("Secondary Camera")) setSecondaryFilter([])
-      if(selectedClearFilters.includes("Customer Rating")) setratingFilter([])
-        if(selectedClearFilters.includes("Discount"))setDiscountFilter([])
-          if(selectedClearFilters.includes("Price"))setpriceFilter([])
+    if (selectedClearFilters.includes("Customer Rating")) setratingFilter([])
+    if (selectedClearFilters.includes("Discount")) setDiscountFilter([])
+    if (selectedClearFilters.includes("Price")) setpriceFilter([])
 
-  // Hide the popup
-  setshow(false)
+    // Hide the popup
+    setshow(false)
   };
 
-                                          
-                                                                                             
+
+
   return (
     <>
       <div className="filter-section3">
@@ -178,7 +178,7 @@ const crossclick=()=>{
                 )}
 
 
- 
+
 
                 {showRam && (
                   <div className="ram-option">
@@ -639,41 +639,41 @@ const crossclick=()=>{
                 />Secondary Camera</label>
             )}
             {ratingFilter.length > 0 && (
-              <label className="label-filter"> 
-              <input className="check2" 
-              type="checkbox" 
-              checked={selectedClearFilters.includes("Customer Rating")}  onChange={()=>
-                setSelectedClearFilters((prev)=>
-                prev.includes("Customer Rating")?
-              prev.filter((f)=>f!=="Customer Rating"):
-              [...prev,"Customer Rating"]
-                )
-              }
-               />Customer Rating</label>
+              <label className="label-filter">
+                <input className="check2"
+                  type="checkbox"
+                  checked={selectedClearFilters.includes("Customer Rating")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Customer Rating") ?
+                        prev.filter((f) => f !== "Customer Rating") :
+                        [...prev, "Customer Rating"]
+                    )
+                  }
+                />Customer Rating</label>
             )}
             {DiscountFilter.length > 0 && (
-              <label className="label-filter"> 
-              <input className="check2" 
-              type="checkbox" 
-              checked={selectedClearFilters.includes("Discount")} onChange={()=>
-                setSelectedClearFilters((prev)=>
-                prev.includes("Discount")?
-              prev.filter((f)=>f!=="Discount"):
-              [...prev,"Discount"]
-                )
-              } />Discount</label>
+              <label className="label-filter">
+                <input className="check2"
+                  type="checkbox"
+                  checked={selectedClearFilters.includes("Discount")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Discount") ?
+                        prev.filter((f) => f !== "Discount") :
+                        [...prev, "Discount"]
+                    )
+                  } />Discount</label>
             )}
             {priceFilter.length > 0 && (
-              <label className="label-filter"> 
-              <input className="check2" 
-              type="checkbox" 
-              checked={selectedClearFilters.includes("Price")} onChange={()=>
-                setSelectedClearFilters((prev)=>
-                prev.includes("Price")?
-              prev.filter((f)=>f!=="Price"):
-              [...prev,"Price"]
-                )
-              } />Price</label>
+              <label className="label-filter">
+                <input className="check2"
+                  type="checkbox"
+                  checked={selectedClearFilters.includes("Price")} onChange={() =>
+                    setSelectedClearFilters((prev) =>
+                      prev.includes("Price") ?
+                        prev.filter((f) => f !== "Price") :
+                        [...prev, "Price"]
+                    )
+                  } />Price</label>
             )}
 
             <div className="cancel-clear2">
@@ -699,35 +699,10 @@ export default Filter;
 
 
 
-    
-                                  
 
 
 
-
-
-
-                                                                                        
-
-
-
-
-
-
-
-
-
-
-
-                          
-
-
-
-
-
-
-
-
+                  
 
 
 
@@ -736,8 +711,8 @@ export default Filter;
 
                                 
 
-                                                                                                                                                    
 
+             
 
 
 
@@ -745,18 +720,10 @@ export default Filter;
 
 
 
- 
 
-              
-    
-      
-                                                              
-        
 
 
 
-   
-                                                                                                                                       
 
 
 
@@ -774,7 +741,6 @@ export default Filter;
 
 
 
-                                                                                                                                                    
 
 
 
@@ -795,37 +761,14 @@ export default Filter;
 
 
 
-                                                                             
-   
-                                                                                                  
 
 
 
 
-                                      
 
 
 
-                                                   
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                                        
-
-                             
