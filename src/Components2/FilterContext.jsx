@@ -25,11 +25,11 @@ export const FilterProvider = ({ children }) => {
   const [DiscountFilter, setDiscountFilter] = useState([]);
 
   const [Primary, setPrimary] = useState([]);
-  const [primaryFilter, setPrimaryFilter] = useState([]);
+  const [primaryFilter, setPrimaryFilter] = useState([]);                            
 
   const [Secondary, setSecondary] = useState([]);
   const [SecondaryFilter, setSecondaryFilter] = useState([]);
-
+                                                                      
   const [rating, setrating] = useState([]);
   const [ratingFilter, setratingFilter] = useState([]);
 
@@ -41,7 +41,7 @@ const [priceFilter, setpriceFilter] = useState([]);
     fetch("/Apple.json")
       .then((res) => res.json())
       .then((data) => {
-        setproduct(data);
+        setproduct(data); 
 
         const uniqueRam = [...new Set(data.map((p) => p.RAMcheck))];
         const uniqueBrand = [...new Set(data.map((p) => p.brand))];
@@ -54,7 +54,7 @@ const [priceFilter, setpriceFilter] = useState([]);
           { label: "256 GB & Above", min: 256, max: Infinity },
           { label: "64 - 127.9 GB", min: 64, max: 127.9 },
         ]);
-
+                          
         setSreen([
           { label: "6 - 6.3 inch", min: 6, max: 6.3 },
           { label: "6.4 inch & Above", min: 6.4, max: Infinity },
@@ -242,49 +242,10 @@ const priceMatch =
          priceFilterOptions,
 priceFilter,
 setpriceFilter,
-
+                            
       }}
     >
       {children}
     </FilterContext.Provider>
   );
 };
-
-      
-
-
- 
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                
-
- 
-
-                                            
-
-       
-
-                                                                     
-
-           
-
-  
-
-
-                    
-
-
-          
-      
-
-
-
-
-                    
-
-                 
-
-
-
-                                                                                         
-                                                                                                                                                                                                                                                                                                                                                      

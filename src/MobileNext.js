@@ -19,7 +19,7 @@ function MobileNext() {
   const [Screen, setSreen] = useState([])
   const [ScreenFilter, setScreenFilter] = useState([])
   const [battery, setbattery] = useState([])
-  const [BatteryFilter, setBatteryFilter] = useState([])
+  const [BatteryFilter, setBatteryFilter] = useState([])                                 
   const [Discount, setDiscount] = useState([])
   const [DiscountFilter, setDiscountFilter] = useState([])
   const [Primary, setPrimary] = useState([])
@@ -93,13 +93,13 @@ useEffect(()=>{
         setSecondary(uniqueSecondary)                     
         setrating(uniqueRating)                         
       });
-  }, []);
+  }, []);                
 
   // FILTERING LOGIC
   const filteredProducts = products.filter((p) => {                          
     const matchRam =                                             
-      RamFilter.length === 0 || RamFilter.includes(p.RAMcheck);                           
-
+      RamFilter.length === 0 || RamFilter.includes(p.RAMcheck);                               
+                         
     const matchInternal =
       internalFilter.length === 0 || internalFilter.some((range) => p.Internalcheck >= range.min && p.Internalcheck <= range.max);
 
@@ -123,13 +123,13 @@ useEffect(()=>{
 
     const matchrating =
       ratingFilter.length === 0 || ratingFilter.some((range) => p.green >= range.min && p.green <= range.max)
-    const price =
+    const price = 
       parseInt(p.price.replace(/₹|,/g, ""));
 
     return matchRam && matchInternal && brandmatch && matchScreen && matchbattery && matchdiscount && matchprimary && matchsecondary && matchrating && price >= priceFilter.min && price <= priceFilter.max;
   });
   return (                          
-    <>    
+    <>                         
     {ismobile ?(   
       <div>
         <Header2 filtertype={filtertype} onfilterchange={setfiltertype}/>
@@ -144,7 +144,7 @@ useEffect(()=>{
       <div className="body-container">           
         <div>                                                                                               
           <Filter2                                                  
-            Ram={Ram} setRamFilter={setRamFilter} RamFilter={RamFilter}
+            Ram={Ram} setRamFilter={setRamFilter} RamFilter={RamFilter}                              
             internal={internal} setInternalFilter={setInternalFilter} internalFilter={internalFilter}
             Brand={Brand} setBrandFilter={setBrandFilter} BrandFilter={BrandFilter}
             Screen={Screen} setScreenFilter={setScreenFilter}  ScreenFilter={ScreenFilter}
@@ -155,7 +155,7 @@ useEffect(()=>{
             rating={rating} setratingFilter={setratingFilter} ratingFilter={ratingFilter}
             priceFilter={priceFilter} setpriceFilter={setpriceFilter}
           />
-          <Hon />
+          <Hon />                             
         </div>
         <div className="Products-container2">
           <Product2 products={filteredProducts} />
@@ -170,25 +170,6 @@ useEffect(()=>{
 }
 
 export default MobileNext;
-
- 
-                   
- 
- 
-                                                                          
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

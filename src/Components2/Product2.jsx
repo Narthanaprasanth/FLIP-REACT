@@ -52,7 +52,7 @@ function Product2({ products,externalfilter }) {
         setproductList(sorted)
         setactivesort("low")
     }
-
+               
     const sortpricebyhighprice = () => {
         const sorted = [...productList].sort((a, b) => {
             const priceA = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price;
@@ -114,7 +114,7 @@ function Product2({ products,externalfilter }) {
             <div className="product-listing1">
                 {productList.map((item, index) => (
                     <React.Fragment key={index}>
-                        <div className="product-listing2">
+                        <div className="product-listing2">     
                             <div className="product-listing3">
                                 <div className="product-listing4">
                                     <div className="product-main1">
@@ -122,7 +122,7 @@ function Product2({ products,externalfilter }) {
                                         <div className="apple-item1">
                                             {item.seller && (<div className="best-seller">
                                                 {item.seller}
-                                            </div>
+                                            </div> 
                                             )}
 
                                             <div className="apple-item2">
@@ -196,7 +196,7 @@ function Product2({ products,externalfilter }) {
                                                     </ul>
                                                 </div>
 
-                                            </div>
+                                            </div>               
 
                                             <div className="price-container2">
                                                 <div className="price2">
@@ -385,47 +385,3 @@ function Product2({ products,externalfilter }) {
     )
 }
 export default Product2
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                     
-
-
-
-
-     

@@ -15,7 +15,7 @@ const ProductList = () => {
       .catch((error) => console.error("Error Fetching Data:", error));
   }, []);
 
-  // Track screen resize      
+       
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024 && window.innerWidth > 426);
@@ -25,18 +25,18 @@ const ProductList = () => {
         setSliceCount(6)
       }
     };
-    handleResize(); // Initial run
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  // Pagination
-  const showNext = () => {
+
+  const showNext = () => { 
     if (startIndex + 6 < products.length) {
       setStartIndex((prev) => prev + 2);
     }
-  };
+  };                    
   const showPrev = () => {
-    if (startIndex > 0) {
+    if (startIndex > 0) {               
       setStartIndex((prev) => prev - 2);
     }
   };
@@ -48,7 +48,7 @@ const ProductList = () => {
           {products.slice(startIndex, startIndex + sliceCount).map((product, index) => (
             <div className="cover" key={index}>
               <div className="prod">
-                <img
+                <img                                      
                   src={product.image}
                   alt={product.name}
                 />
@@ -65,7 +65,7 @@ const ProductList = () => {
             </div>
           ))}
         </div>
-        <button className="btn-left2" onClick={showPrev}>
+        <button className="btn-left2" onClick={showPrev}>  
           <svg></svg>
         </button>
         <button className="btn-right2" onClick={showNext}>

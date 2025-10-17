@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "./Flip2.css"
 function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBrandFilter, Screen, setScreenFilter, battery, setBatteryFilter, Discount, setDiscountFilter, Primary, setPrimaryFilter, Secondary, setSecondaryFilter, rating, setratingFilter, priceFilter, setpriceFilter, RamFilter, internalFilter, BrandFilter, ScreenFilter, BatteryFilter, DiscountFilter, primaryFilter, SecondaryFilter, ratingFilter }) {
     const toggleSelection = (item, setFilter) => {
@@ -9,6 +9,9 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
         );                                    
     };
 
+
+
+
     const toggleSelection2 = (item, setFilter) => {
   setFilter(prev =>
     prev.includes(item)  
@@ -16,11 +19,44 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
       : [...prev, item]      
   );
 }; 
- 
+
+const trackRef = useRef(null);
+const [dragging, setDragging] = useState(null);
+
+const handleMouseDown = (e, type) => {
+  e.preventDefault();
+  setDragging(type);
+};
+
+const handleMouseUp = () => {
+  setDragging(null);
+};
+
+const handleMouseMove = (e) => {
+  if (!dragging) return;
+  const track = trackRef.current;
+  const rect = track.getBoundingClientRect();
+  let x = e.clientX - rect.left;
+  if (x < 0) x = 0;
+  if (x > rect.width) x = rect.width;
+  const percent = (x / rect.width) * 100;
+  const newValue = Math.round((percent / 100) * 30000);
+
+  setpriceFilter((prev) => {
+    if (dragging === "min" && newValue <= prev.max) {
+      return { ...prev, min: newValue };
+    } else if (dragging === "max" && newValue >= prev.min) {
+      return { ...prev, max: newValue };
+    }
+    return prev;
+  });
+};
 
 
-const [showOptions, setShowOptions] = useState(false);
-const [showinternal,setinternal]=useState(false)
+
+
+const [showOptions, setShowOptions] = useState(true);
+const [showinternal,setinternal]=useState(true)
 const [showbrand,setshowbrand]=useState(true)
 const [showscreen,setscreen]=useState(false)
 const [showbattery,setbattery]=useState(false)
@@ -30,7 +66,7 @@ const [showsecondary,setsecondary]=useState(false)
 const [showrating,setrating]=useState(false)   
 
 const toggle=(c,setter)=>{
-    setter((prev)=>prev.includes(c)?prev.filter((item)=>item!=c):[...prev,c])
+    setter((prev)=>prev.includes(c)?prev.filter((item)=>item!=c):[...prev,c]) 
 }                    
     return (
         <>
@@ -151,13 +187,13 @@ const toggle=(c,setter)=>{
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">RAM</div>
-                            <svg  className={`ukzDZP rZzKt4 ${showOptions ? "rotated" : ""}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setShowOptions(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+                            <svg  className={`ukzDZP rZzKt4 ${showOptions ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setShowOptions(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
                         </div>
                     {showOptions && 
                     ( <div className="options-main">
                             {(RamFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setRamFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setRamFilter([])} ><span>Clear all</span></div>
                                 </div>)}                         
                             <div className="option-main2">
@@ -166,30 +202,32 @@ const toggle=(c,setter)=>{
                                         {Ram.map((c, i) => {
                                             if (!c) return null;
                                             return (
-                                                <label key={i}> <input type="checkbox" checked={RamFilter.includes(c)} onChange={() => toggleSelection2(c, setRamFilter)} />
+                                                <label key={i}> <input type="checkbox" checked={RamFilter.includes(c)} 
+                                                onChange={() => toggleSelection2(c, setRamFilter)}/>
                                                     <div className="each2">{c}</div>
-                                                </label>)
+                                                </label>)                       
                                         })}
                                     </div>   
                                 </div> 
                             </div>          
-                        </div>
+                        </div>             
                     )}                     
                     </div>
-                    {/* INTERNAL STORAGE */}
+                    {/* INTERNAL STORAGE */}                         
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">INTERNAL STORAGE</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setinternal((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                            <svg  className={`ukzDZP rZzKt4 ${showinternal ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setinternal(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+
                         </div>
-                        {showinternal && (
+                        {showinternal && (                               
                             <div className="options-main">
                             {(internalFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setInternalFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setInternalFilter([])} ><span>Clear all</span></div>
                                 </div>)}
-                            <div className="option-main2">
+                            <div className="option-main2">                              
                                 <div className="option-main3">
                                     <div className="option-main4">
                                         {internal.map((range, i) => {
@@ -211,13 +249,14 @@ const toggle=(c,setter)=>{
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">BRAND</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setshowbrand((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                             <svg  className={`ukzDZP rZzKt4 ${showbrand ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setshowbrand(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+
                         </div>
                         {showbrand && (
                             <div className="options-main">
                             {(BrandFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setBrandFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setBrandFilter([])} ><span>Clear all</span></div>
                                 </div>)}
                             <div className="option-main2">
@@ -236,19 +275,20 @@ const toggle=(c,setter)=>{
                             </div>
                         </div>
                         )}
-                        
+                                                                   
                     </div>
                     {/* SCREEN SIZE */}
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">SCREEN SIZE</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setscreen((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                                 <svg  className={`ukzDZP rZzKt4 ${showscreen ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setscreen(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+
                         </div>
                         {showscreen && (
                             <div className="options-main">
                             {(ScreenFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setScreenFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setScreenFilter([])} ><span>Clear all</span></div>
                                 </div>)}
                             <div className="option-main2">
@@ -272,13 +312,14 @@ const toggle=(c,setter)=>{
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">BATTERY CAPACITY</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setbattery((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                             <svg  className={`ukzDZP rZzKt4 ${showbattery ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setbattery(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+
                         </div>
                         {showbattery && (
                             <div className="options-main">
                             {(BatteryFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setBatteryFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setBatteryFilter([])} ><span>Clear all</span></div>
                                 </div>)}
                             <div className="option-main2">
@@ -303,13 +344,14 @@ const toggle=(c,setter)=>{
 
                         <div className="ram-container3">
                             <div className="ram-main">DISCOUNT</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setdiscount((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                                <svg  className={`ukzDZP rZzKt4 ${showdiscount ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setdiscount(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+
                         </div>
                         {showdiscount && (
                             <div className="options-main">
                             {(DiscountFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setDiscountFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setDiscountFilter([])} ><span>Clear all</span></div>
                                 </div>)}
                             <div className="option-main2">
@@ -333,13 +375,14 @@ const toggle=(c,setter)=>{
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">PRIMARY CAMERA</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setprimary((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                                <svg  className={`ukzDZP rZzKt4 ${showprimary ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setprimary(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+
                         </div>
                         {showprimary && (
                             <div className="options-main">
                             {(primaryFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setPrimaryFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setPrimaryFilter([])} ><span>Clear all</span></div>
                                 </div>)}
                             <div className="option-main2">
@@ -363,13 +406,14 @@ const toggle=(c,setter)=>{
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">SECONDARY CAMERA</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setsecondary((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                                <svg  className={`ukzDZP rZzKt4 ${showsecondary ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setsecondary(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
+
                         </div>
                         {showsecondary && (
                             <div className="options-main">
                             {(SecondaryFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setSecondaryFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setSecondaryFilter([])} ><span>Clear all</span></div>
                                 </div>)}
                             <div className="option-main2">
@@ -393,13 +437,13 @@ const toggle=(c,setter)=>{
                     <div className="ram-container2">
                         <div className="ram-container3">
                             <div className="ram-main">CUSTOMER RATING</div>
-                            <svg width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ukzDZP rZzKt4" onClick={()=>setrating((prev)=>!prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" class="SV+H35"></path></svg>
+                                <svg  className={`ukzDZP rZzKt4 ${showrating ? "rotated-open" : "rotated-closed"}`}width="16" height="27" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg"onClick={() => setrating(prev => !prev)}><path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#878787" /></svg>
                         </div>
                         {showrating && (
                              <div className="options-main">
                             {(ratingFilter.length > 0) &&
                                 (<div className="clearall-main">
-                                    <div className="cros3">x</div>
+                                    <div className="cros3" onClick={() => setratingFilter([])}>x</div>
                                     <div className="clear-new" onClick={() => setratingFilter([])} ><span>Clear all</span></div>
                                 </div>)}
                             <div className="option-main2">
@@ -419,76 +463,117 @@ const toggle=(c,setter)=>{
                         )}
                        
                     </div>
+ {/* PRICE */}
+<div className="ram-container2">
+    <div className="ram-container3">
+        <div className="ram-main">PRICE</div>
+    </div>
+    {/* TRACK VISUAL */}
+    <div className="track-wrapper" 
+    ref={trackRef} 
+    onMouseMove={handleMouseMove} 
+    onMouseUp={handleMouseUp}>
+        <div className="track-bar">
+            <div className="track-fill" 
+            style={{
+                left:`${(priceFilter.min/30000)*100}%`,
+                right:`${100-(priceFilter.max===Infinity ? 100 :(priceFilter.max/30000)*100)}%`
+        }}
+        ></div>
+        {/* CIRCLE -MIN*/}
+        <div className="circle circle-min" 
+        style={{left:`${(priceFilter.min/30000)*100}%`}}
+        onMouseDown={(e)=>handleMouseDown(e,"min")}
+        
+        ></div>
+        {/* CIRCLE-MAX */}
+        <div className="circle circle-max"
+        style={{left:`${priceFilter.max===Infinity ? 100:(priceFilter.max/30000)*100}%`, }}
+        onMouseDown={(e)=>handleMouseDown(e,"max")}
+        ></div>
+        </div>
+    </div>
 
-                    {/* PRICE*/}
-                    <div className="ram-container2">
-                        <div className="ram-container3">
-                            <div className="ram-main">PRICE</div>
-                        </div>
-                        <div className="price-range2">
-                            <div className="price-range2">
-                                <div className="range1"></div>
-                                <div className="range1"></div>
-                                <div className="range1"></div>
-                                <div className="range1"></div>
-                                <div className="range1"></div>
-                            </div>
-                        </div>
-                        <div className="trach-container1">
-                            <div className="track-container2">
-
-                                <div className="range-circle1">
-                                    <div className="circle1"></div>
-                                </div>
-
-                                <div className="range-circle2">
-                                    <div className="circle2"></div>
-                                </div>
-                                <div className="track1"></div>
-                                <div className="track2"></div>
-
-                            </div>
-                            <div className="dot-container2">
-                                <div className="dot1">.</div>
-                                <div className="dot1">.</div>
-                                <div className="dot1">.</div>
-                                <div className="dot1">.</div>
-                                <div className="dot1">.</div>
-                                <div className="dot1">.</div>
-                            </div>
-                        </div>
-
-                        <div className="price-select2">
-                            <div className="min-container">
-                                <select className="min-select" value={priceFilter.min} onChange={(e) => setpriceFilter(prev => ({ ...prev, min: e.target.value === "min" ? 0 : parseInt(e.target.value) }))}>
-                                    <option className="op" value="min">Min</option>
-                                    <option className="op" value="10000">₹10000</option>
-                                    <option className="op" value="15000">₹15000</option>
-                                    <option className="op" value="20000">₹20000</option>
-                                    <option className="op" value="30000">₹30000</option>
-                                </select>
-                            </div>
-                            <div className="to">to</div>
-                            <div className="max-container">
-                                <select className="max-select" value={priceFilter.max} onChange={(e) => setpriceFilter(prev => ({ ...prev, max: e.target.value === "Max" ? Infinity : parseInt(e.target.value) }))}>
-                                    <option className="op" value="10000">₹10000</option>
-                                    <option className="op" value="15000">₹15000</option>
-                                    <option className="op" value="20000">₹20000</option>
-                                    <option className="op" value="30000">₹30000</option>
-                                    <option className="op" value="Max">₹30000+</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+    {/* DROP DOWN */}
+    <div className="price-select2">
+        <div className="min-container">
+            <select
+             className="min-select" 
+             value={priceFilter.min} 
+             onChange={(e)=>
+             setpriceFilter((prev)=>({
+                ...prev,min:e.target.value==="min" ? 0 :parseInt(e.target.value)
+             }))}>
+                <option className="op" value="min">Min</option>
+                <option className="op" value="10000">₹10000</option>
+                <option className="op" value="15000">₹15000</option>
+                <option className="op" value="20000">₹20000</option>
+                <option className="op" value="30000">₹30000</option>
+             </select>
+        </div>
+        <div className="to">to</div>
+        <div className="max-container">
+            <select className="max-select"
+             value={priceFilter.max===Infinity?"30000+":priceFilter.max}
+              onChange={(e)=>{
+                const value=e.target.value==="30000+"?Infinity:Number(e.target.value)
+                setpriceFilter((prev)=>({...prev,max:value}))
+              }}>
+                <option className="op" value="10000">₹10000</option>
+                <option className="op" value="15000">₹15000</option>
+                <option className="op" value="20000">₹20000</option>
+                <option className="op" value="30000">₹30000</option>
+                <option className="op" value="30000+">₹30000+</option>
+            </select>
+        </div>
+    </div>
+</div>
                 </div>
             </div>                          
         </>
     )
 }
 export default Filter2
- 
+                                            
                                                                                    
 
 
 
-                       
+                    
+
+
+
+
+
+
+
+
+                                                      
+
+
+
+
+                 
+
+                           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                       
+                                                                    
+
+
+
+                                                                                                                                                                                                                                                  
+    

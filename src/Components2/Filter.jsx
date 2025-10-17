@@ -5,10 +5,11 @@ import search from "./image2/search.png"
 import { useNavigate } from "react-router-dom";
 
 function Filter() {
-  const { applyFilters } = useContext(FilterContext);
+  // const { applyFilters } = useContext(FilterContext);
 
 
   const {
+    applyFilters,
     Ram,
     RamFilter,
     setRamFilter,
@@ -30,16 +31,16 @@ function Filter() {
     Primary,
     primaryFilter,
     setPrimaryFilter,
-    Secondary,
+    Secondary,                 
     SecondaryFilter,
     setSecondaryFilter,
-    rating,
+    rating,               
     ratingFilter,
     setratingFilter,
     priceFilterOptions,
     priceFilter,
     setpriceFilter,
-
+                                      
   } = useContext(FilterContext);
 
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ function Filter() {
   const filters = [
     "Brand",
     "RAM",
-    "Internal Storage",
+    "Internal Storage",                     
     "Screen Size",
     "Battery Capacity",
     "Discount",
@@ -76,25 +77,22 @@ function Filter() {
     setshowbrand(item === "Brand")
     setinternal(item === "Internal Storage")
     setscreen(item === "Screen Size")
-    setbattery(item === "Battery Capacity")
+    setbattery(item === "Battery Capacity")    
     setdiscount(item === "Discount")
     setprimary(item === "Primary Camera")
     setsecondary(item === "Secondary Camera")
     setrating(item === "Customer Rating")
     setShowPrice(item === "Price");
-
-
-
   }
 
   const [selectedClearFilters, setSelectedClearFilters] = useState([])
   const crossclick = () => {
-    setshow(false)
+    setshow(false) 
   }
-  const clearclick = () => {
+  const clearclick = () => { 
     setshow(true)
   }
-  const svgnavigate = () => {
+  const svgnavigate = () => { 
     navigate(-1)
   }
   const clearfilter = () => {
@@ -110,7 +108,7 @@ function Filter() {
     if (selectedClearFilters.includes("Discount")) setDiscountFilter([])
     if (selectedClearFilters.includes("Price")) setpriceFilter([])
 
-    // Hide the popup
+   
     setshow(false)
   };
 
@@ -253,14 +251,14 @@ function Filter() {
 
                       const isChecked = internalFilter.includes(range);
 
-                      const handleinternalchange = () => {
+                      const handleinternalchange=()=>{
                         let updated;
                         if (isChecked) {
                           updated = internalFilter.filter((item) => item !== range);
                         } else {
                           updated = [...internalFilter, range];
                         }
-                        setInternalFilter(updated);
+                        setInternalFilter(updated);                                      
                       };
 
                       return (
@@ -696,79 +694,3 @@ function Filter() {
 
 
 export default Filter;
-
-
-
-
-
-
-                  
-
-
-
-
-
-
-                                
-
-
-             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1076,12 +1076,67 @@ body {
 }
 
 .ram-container3 svg {
-    transform: rotate(90deg);
+    /* transform: rotate(180deg); */
     display: inline-block;
     cursor: pointer;
     width: 6px;
     height: 11px;
+   
 }
+
+.ukzDZP.rZzKt4 {
+  transition: transform 0.3s ease;
+  transform-origin: 50% 50%;
+}
+
+
+.ukzDZP.rZzKt4.rotated-closed {
+  transform: rotate(-90deg);
+}
+
+
+.ukzDZP.rZzKt4.rotated-open {
+  transform: rotate(90deg);
+}
+
+
+/* PRICE-TRACK */
+
+
+.track-wrapper{
+    position:  relative;
+    width: 90%;
+    height: 13px;
+    cursor: pointer;
+    margin: 16px auto;
+}
+.track-bar{
+    height: 2px;
+    background-color: #c2c2c2;
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    width: 100%;
+}
+.track-fill{
+    background-color: #2874f0;
+    top: 0px;
+    height: 6px;
+    position: absolute;
+    border-radius: 5px;
+}                       
+.circle{
+    position: absolute;
+    top: 3px;
+    transform: translate(-50%,-50%);
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 1px solid #bababa;
+    background-color: rgb(255, 255, 255);
+
+}
+
 
 .option-main2 {
     margin: 7px 0;
@@ -1600,15 +1655,6 @@ body {
 }
 
 
-.ukzDZP.rZzKt4 {
-    transition: transform 0.3s ease;
-    transform-origin: 50% 50%;
-    /* Use percentages for SVG */
-}
-
-.ukzDZP.rZzKt4.rotated {
-    transform: rotate(90deg);
-}
 
 .heart-5 {
     display: none;
