@@ -37,7 +37,7 @@ const Trends = ({ dataSource, title }) => {
         }
     }
     return (
-        <div className="main-container1">
+        <div className="main-container1">                                                                                              
             <div className="Trend-container">
                 <h2>{title}</h2>
                 <div className="inner-Trends">

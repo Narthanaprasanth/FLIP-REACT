@@ -10,16 +10,14 @@ function Filter2({ Ram, setRamFilter, internal, setInternalFilter, Brand, setBra
     };
 
 
-
-
     const toggleSelection2 = (item, setFilter) => {
   setFilter(prev =>
     prev.includes(item)  
-      ? prev.filter(v => v !== item) 
-      : [...prev, item]      
+      ? prev.filter(v => v !== item)                            
+      : [...prev, item]                                    
   );
 }; 
-
+ 
 const trackRef = useRef(null);
 const [dragging, setDragging] = useState(null);
 
@@ -27,12 +25,12 @@ const handleMouseDown = (e, type) => {
   e.preventDefault();
   setDragging(type);
 };
-
+                 
 const handleMouseUp = () => {
   setDragging(null);
 };
 
-const handleMouseMove = (e) => {
+const handleMouseMove = (e) => {                                                                                 
   if (!dragging) return;
   const track = trackRef.current;
   const rect = track.getBoundingClientRect();
@@ -88,7 +86,10 @@ const toggle=(c,setter)=>{
                                         DiscountFilter.length > 0 ||                                                            
                                         primaryFilter.length > 0 ||
                                         SecondaryFilter.length > 0 ||
-                                        ratingFilter.length > 0) &&
+                                        ratingFilter.length > 0||
+                                        priceFilter.min!==0||
+                                        priceFilter.max!==Infinity
+                                    ) &&
                                         (<div className="clearall2" onClick={() => window.location.reload()}>
                                             <span >CLEAR ALL</span>
                                         </div>
@@ -159,7 +160,18 @@ const toggle=(c,setter)=>{
                                             <div className="cros2" >x</div>
                                             <div className="text-display">{range.label}</div>
                                         </div>
-                                    ))}            
+                                    ))}  
+                                    {/* PRICE */}
+                                    {(priceFilter.min!==0 || priceFilter.max!==Infinity) && (
+                                        <div className="grey-text2" onClick={()=> setpriceFilter({min:0,max:Infinity})}>
+                                            <div className="cros2">x</div>
+                                            <div className="text-display">
+                                                ₹{priceFilter.min}-₹{priceFilter.max===Infinity ? "30000+" :priceFilter.max}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                
                                 </div>
                             </div>                  
                         </div>
